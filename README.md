@@ -1,5 +1,9 @@
 # usuyuki_blog_theme_2021_spring_main
 
+<!-- 参考 -->
+
+http://galileo-venus.com/2020/05/29/20200525_wpthema/
+
 ## docker による wordpress のローカル環境です。
 
 ## docker 参考

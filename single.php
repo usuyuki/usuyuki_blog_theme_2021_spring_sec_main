@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: シングル基本
+Template Name: シングル基本(普通の投稿で利用)
 Template Post Type: post
 */
 ?>
