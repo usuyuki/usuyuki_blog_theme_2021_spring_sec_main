@@ -88,3 +88,15 @@ remove_filter( 'pre_term_description', 'wp_filter_kses' );
 
 //カテゴリ説明欄HTMLタグ有効
 remove_filter( 'pre_term_name', 'wp_filter_kses' );
+
+//the excertの設定
+function twpp_change_excerpt_more( $more ) {
+	$html = '<a href="' . esc_url( get_permalink() ) . '">[...続きを読む]</a>';
+	return $html;
+  }
+  
+  add_filter( 'excerpt_more', 'twpp_change_excerpt_more' );
+  function twpp_change_excerpt_length( $length ) {
+	return 100; 
+  }
+  add_filter( 'excerpt_length', 'twpp_change_excerpt_length', 999 );

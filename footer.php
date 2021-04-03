@@ -100,6 +100,38 @@
                 <a href="<?php  echo esc_url( home_url( '/' ) )?>/category/utunomiya">もっと見る</a>
             </div>
         </div>
+        <div>
+            <div class="genre-title">
+                <h1><i class="fas fa-home"></i>プログラミング</h1>
+            </div>
+            <p>ただの趣味です。</p>
+            <div>
+                <?php $args=array(
+                'numberposts'=>3,
+                'category_name'=>"programing",
+            // 'post_type'=>'work',
+            // 'orderby' => 'meta_value',
+            // 'meta_key' => 'work_start', //ACFのフィールド名
+            'order' => 'DESC'
+
+            );
+            $customPost=get_posts($args);
+            if($customPost):
+                foreach($customPost as $post):
+                    // setup_postdata($post):
+            ?>
+                <article>
+                    <a class="h4 text-center my-2" href="<?php echo get_permalink(); ?>">
+                        "<?php the_title(); ?>"</a>
+                </article>
+                <?php endforeach;
+        endif; ?>
+
+            </div>
+            <div>
+                <a href="<?php  echo esc_url( home_url( '/' ) )?>/category/utunomiya">もっと見る</a>
+            </div>
+        </div>
     </main>
     <!-- functions.phpで設定したウィジェット（フッター用）の読み込み -->
     <div id="footerwidget">

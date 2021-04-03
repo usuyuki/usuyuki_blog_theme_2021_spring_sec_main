@@ -2,7 +2,7 @@
 <div class="h-auto pb-16" style="background-image:url('<?php
 echo get_template_directory_uri();
 ?>/img/index_main.jpg')">
-    <h1 class="text-center pt-12 text-5xl text-center font-bold h-auto">
+    <h1 class="text-center pt-12 text-5xl text-center font-bold h-auto norepeact">
         <span class="char1">う</span>
         <span class="char2">す</span>
         <span class="char3">ゆ</span>
@@ -63,15 +63,50 @@ echo get_template_directory_uri();
             </div>
         </div>
     </div>
-    <div class="box mx-auto"><i class="fas fa-snowflake"></i></div>
-    <div>
-        <div class="circle-anime">
 
-        </div>
+    <div>
+
+
     </div>
 </div>
-<div>
-    <h2 class="text-center text-2xl kiwi-maru">最新の記事</h2>
-</div>
+<div class="">
+    <div class="circle-anime1 h-4 w-4 bg-green-500 rounded-full inline-block">
 
+    </div>
+
+
+    <h2 class="text-center text-2xl kiwi-maru h2-bou mb-8">最新の記事</h2>
+
+    <div class="flex justify-center wrap mt-8 flex-wrap">
+        <?php $args=array(
+                'numberposts'=>5,
+             
+            // 'post_type'=>'work',
+            // 'orderby' => 'meta_value',
+            // 'meta_key' => 'work_start', //ACFのフィールド名
+            'order' => 'DESC'
+
+            );
+            $customPost=get_posts($args);
+            if($customPost):
+                foreach($customPost as $post):
+                    // setup_postdata($post):
+            ?>
+
+        <?php get_template_part( 'template/article/article_template' ); ?>
+        <?php endforeach;
+        endif; ?>
+
+    </div>
+    <div class="mx-auto text-center">
+        <a class="btn-motto" href="<?php echo home_url( '/' ) ?>">もっと見る！</a>
+    </div>
+
+    <div class="circle-anime2 h-4 w-4 bg-blue-500 rounded-full inline-block">
+
+    </div>
+</div>
+<h2 class="text-center text-2xl kiwi-maru h2-bou my-12">カテゴリー別の記事</h2>
+
+<h3 class="text-center text-xl two-square kiwi-maru h2-bou inline ml-12">カテゴリー</h3>
 <?php get_footer(); ?>
