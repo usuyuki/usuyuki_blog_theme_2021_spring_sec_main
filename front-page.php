@@ -75,7 +75,7 @@ echo get_template_directory_uri();
     </div>
 
 
-    <h2 class="text-center text-2xl kiwi-maru h2-bou mb-8">最新の記事</h2>
+    <h2 class="text-center text-2xl kiwi-maru h2-bou mb-8 start-large">最新の記事</h2>
 
     <div class="flex justify-center wrap mt-8 flex-wrap">
         <?php $args=array(
@@ -106,7 +106,7 @@ echo get_template_directory_uri();
 
     </div>
 </div>
-<h2 class="text-center text-2xl kiwi-maru h2-bou my-12">カテゴリー別の記事</h2>
+<h2 class="text-center text-2xl kiwi-maru h2-bou my-12 start-large">カテゴリー別の記事</h2>
 
 <h3 class="text-center text-xl two-square kiwi-maru h2-bou inline ml-12">カテゴリー</h3>
 <?php get_footer(); ?>
