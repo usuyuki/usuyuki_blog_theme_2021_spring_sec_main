@@ -146,6 +146,28 @@ $counter=0;
 <div class="w-1/2 mx-auto " style="border:1px dashed black;"></div>
 <?php $counter+=1;
 endforeach; ?>
+<div>
+    <div class="flex justify-center">
+        <h3 class="text-center text-3xl two-square kiwi-maru h2-bou inline mt-20">プログラミング系記事について</h3>
+    </div>
+    <p class="text-center mx-2 my-4">プログラミング系はQiitaやZennに投稿すること多めです。下記ロゴからアクセスいただけます。</p>
+    <div class="flex justify-center">
+        <div class="mx-2">
+            <a target="_blank" rel="noopener" class="mx-4" href="https://qiita.com/Usuyuki">
+                <img src="<?php
+echo get_template_directory_uri();
+?>/img/logo/qiita-logo.png" alt="qiita" class=" object-fill  h-auto" style="width:300px">
+            </a>
+        </div>
+        <div class="mx-2 flex items-center">
+            <a target="_blank" rel="noopener" class="mx-4 " href="https://zenn.dev/usuyuki">
+                <img src="<?php
+echo get_template_directory_uri();
+?>/img/logo/zenn-logo.png" alt="qiita" class=" object-fill h-auto" style="width:300px">
+            </a>
+        </div>
+    </div>
+</div>
 <!-- ジャンルかたまりここまで -->
 
 
