@@ -100,3 +100,7 @@ function twpp_change_excerpt_more( $more ) {
 	return 100; 
   }
   add_filter( 'excerpt_length', 'twpp_change_excerpt_length', 999 );
+
+
+  // アイキャッチ画像を有効にする。
+add_theme_support('post-thumbnails');

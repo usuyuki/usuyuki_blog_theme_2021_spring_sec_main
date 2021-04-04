@@ -99,7 +99,7 @@ echo get_template_directory_uri();
 
     </div>
     <div class="mx-auto text-center my-8">
-        <a class="btn-motto" href="<?php echo home_url( '/allpost' ) ?>">もっと見る！</a>
+        <a class="btn-motto" href="<?php echo home_url( '/allposts' ) ?>">もっと見る！</a>
     </div>
 
     <div class="circle-anime2 h-4 w-4 bg-blue-500 rounded-full inline-block">

@@ -13,6 +13,9 @@ body {
   /* overflow: hidden; */
 }
 /* 基本 */
+p {
+  word-break: break-all; /* 要素のはみ出し防止 */
+}
 a {
   word-break: break-all; /* 要素のはみ出し防止 */
   -webkit-transition: 0.3s ease-in-out;
