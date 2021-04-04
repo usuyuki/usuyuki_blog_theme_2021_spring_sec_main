@@ -59,18 +59,7 @@ if(have_posts()){
 } ?>
         </div>
 
-        <!-- 前後の記事リンク -->
-        <?php if( get_previous_post()|| get_next_post()): ?>
-        <div class="entry-pager">
-            <?php
-	//前の記事へ
-	previous_post_link('%link', '<span>%title</span>', TRUE, '');
-	
-	//次の記事へ
-	next_post_link('%link', '<span>%title</span>', TRUE, '');
-	?>
-        </div>
-        <?php endif; ?>
+
 
     </div>
     <div class="md:block hidden">
