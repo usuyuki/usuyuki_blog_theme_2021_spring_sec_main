@@ -10,9 +10,11 @@ body {
   scroll-behavior: smooth;
   background-color: #f9fafb;
   color: #474747;
+  /* overflow: hidden; */
 }
 /* 基本 */
 a {
+  word-break: break-all; /* 要素のはみ出し防止 */
   -webkit-transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
@@ -212,7 +214,7 @@ h1 span {
 }
 .article-card-arufa:before {
   background: #e8ddbd;
-  border-color: #fff #fff #e8ddbd #e8ddbd;
+  border-color: #f9fafb #f9fafb #e8ddbd #e8ddbd;
 }
 .article-card h1 {
   font-size: 24px;

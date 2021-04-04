@@ -26,16 +26,16 @@ echo get_template_directory_uri();
 
     </div>
     <div class="flex justify-center items-center">
-        <a class="mx-4" href="https://twitter.com/usuyuki26">
+        <a target="_blank" rel="noopener" class="mx-4" href="https://twitter.com/usuyuki26">
             <i class="fab fa-2x fa-twitter"></i>
         </a>
-        <a class="mx-4" href="https://github.com/Usuyuki">
+        <a target="_blank" rel="noopener" class="mx-4" href="https://github.com/Usuyuki">
             <i class="fab fa-2x fa-github"></i>
         </a>
-        <a class="mx-4" href="https://www.youtube.com/channel/UCI4-1pvH-0XdwfKZe4WBPhQ">
+        <a target="_blank" rel="noopener" class="mx-4" href="https://www.youtube.com/channel/UCI4-1pvH-0XdwfKZe4WBPhQ">
             <i class="fab fa-2x fa-youtube"></i>
         </a>
-        <a class="mx-4" href="https://portfolio.usuyuki.net/">
+        <a target="_blank" rel="noopener" class="mx-4" href="https://portfolio.usuyuki.net/">
             <img src="<?php
 echo get_template_directory_uri();
 ?>/img/logo/portfolio_favicon.png" alt="ポートフォリオ" class=" object-fill h-12 w-12 rounded-full">
@@ -47,7 +47,7 @@ echo get_template_directory_uri();
         <div class="my-12  pt-8 pb-12 px-12 top-blog-exp">
             <div class=" border-b-2 border-black h-auto">
 
-                <h3 class="text-center text-2xl pb-2 kiwi-maru font-bold">このブログについて！</h3>
+                <h3 class="text-center text-3xl pb-2 kiwi-maru font-bold">このブログについて！</h3>
             </div>
             <div class="mt-4 mx-auto ">
                 <h4 class="font-bold text-xl"><i class="fab fa-quinscape"></i>なんのブログ？</h4>
@@ -75,11 +75,11 @@ echo get_template_directory_uri();
     </div>
 
 
-    <h2 class="text-center text-2xl kiwi-maru h2-bou mb-8 start-large">最新の記事</h2>
+    <h2 class="text-center text-3xl kiwi-maru h2-bou mb-8 start-large">最新の記事</h2>
 
     <div class="flex justify-center wrap mt-8 flex-wrap">
         <?php $args=array(
-                'numberposts'=>5,
+                'numberposts'=>4,
              
             // 'post_type'=>'work',
             // 'orderby' => 'meta_value',
@@ -98,15 +98,56 @@ echo get_template_directory_uri();
         endif; ?>
 
     </div>
-    <div class="mx-auto text-center">
-        <a class="btn-motto" href="<?php echo home_url( '/' ) ?>">もっと見る！</a>
+    <div class="mx-auto text-center my-8">
+        <a class="btn-motto" href="<?php echo home_url( '/allpost' ) ?>">もっと見る！</a>
     </div>
 
     <div class="circle-anime2 h-4 w-4 bg-blue-500 rounded-full inline-block">
 
     </div>
 </div>
-<h2 class="text-center text-2xl kiwi-maru h2-bou my-12 start-large">カテゴリー別の記事</h2>
+<h2 class="text-center text-3xl kiwi-maru h2-bou my-12 start-large">カテゴリー別の記事</h2>
 
-<h3 class="text-center text-xl two-square kiwi-maru h2-bou inline ml-12">カテゴリー</h3>
+<!-- ジャンルかたまりここから -->
+<?php  
+$slugs=["travel","life","utunomiya","programing"];
+$names=["旅","生活向上","宇都宮","プログラミング"];
+$counter=0;
+?>
+<?php foreach($slugs as $slug):?>
+<div class="flex justify-center">
+
+    <h3 class="text-center text-3xl two-square kiwi-maru h2-bou inline mt-20"><?php echo $names[$counter];?></h3>
+</div>
+<div class="flex justify-center wrap mt-8 flex-wrap">
+    <?php $args=array(
+                'numberposts'=>3,
+             
+                'category_name'=>$slug,
+            // 'orderby' => 'meta_value',
+            // 'meta_key' => 'work_start', //ACFのフィールド名
+            'order' => 'DESC'
+
+            );
+            $customPost=get_posts($args);
+            if($customPost):
+                foreach($customPost as $post):
+                    // setup_postdata($post):
+            ?>
+
+    <?php get_template_part( 'template/article/article_template' ); ?>
+    <?php endforeach;
+        endif; ?>
+
+</div>
+<div class="mx-auto text-center my-8">
+    <a class="btn-motto" href="<?php echo home_url( '/category/') ?><?php echo $slug ?>">もっと見る！</a>
+</div>
+<div class="w-1/2 mx-auto " style="border:1px dashed black;"></div>
+<?php $counter+=1;
+endforeach; ?>
+<!-- ジャンルかたまりここまで -->
+
+
+
 <?php get_footer(); ?>

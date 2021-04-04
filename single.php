@@ -6,10 +6,10 @@ Template Post Type: post
 ?>
 <?php get_header(); ?>
 <div class="md:grid grid-cols-3">
-    <div>
+    <div class="md:block hidden">
 
     </div>
-    <div id="template-single">
+    <div id="template-single" class="md:mx-0 mx-4 ">
 
         <!-- タイトルなど基本情報の読み込み -->
         <div class="entry-header">
@@ -17,7 +17,7 @@ Template Post Type: post
                 style="height:50vh;background-image:url(<?php the_post_thumbnail_url( 'large' ); ?>)">
 
 
-                <div style="background-color:rgba(0,0,0,.7)">
+                <div class="w-full" style="background-color:rgba(0,0,0,.7)">
                     <!--タイトル-->
                     <h1 class="text-white text-center text-2xl font-bold kiwi-maru my-4 px-12">
                         <?php the_title();?></h1>
@@ -29,7 +29,7 @@ Template Post Type: post
 $categories = get_the_category();
 //選択したカテゴリ全て表示
 foreach($categories as $category){
-	echo '<a class="card-border-tegaki-for-single mx-auto" href="'.get_category_link($category->term_id).'">'.$category->name.'</a>';
+	echo '<a class="card-border-tegaki-for-single mx-4" href="'.get_category_link($category->term_id).'">'.$category->name.'</a>';
 }
 /* // 最初の一つだけ表示する場合はこちら //
 echo '<a href="'.get_category_link($categories[0]->term_id).'">'.$categories[0]->name.'</a>';
@@ -73,7 +73,8 @@ if(have_posts()){
         <?php endif; ?>
 
     </div>
-    <div>
+    <div class="md:block hidden">
+
         <?php get_sidebar(); ?>
     </div>
 </div>

@@ -1,153 +1,24 @@
 </main>
 
-<footer>
+<footer class="border-t-2 mt-24 border-gray-400 ">
 
 
-    <main class="index-grid mx-24 py-12">
-        <div>
-            <div class="genre-title">
-                <h1><i class="fas fa-map-marker-alt"></i>旅</h1>
-            </div>
-            <p>心をたまには洗いたくなります。</p>
-            <div>
-                <?php $args=array(
-                'numberposts'=>3,
-                'category_name'=>"travel",
-            // 'post_type'=>'work',
-            // 'orderby' => 'meta_value',
-            // 'meta_key' => 'work_start', //ACFのフィールド名
-            'order' => 'DESC'
-
-            );
-            $customPost=get_posts($args);
-            if($customPost):
-                foreach($customPost as $post):
-                    // setup_postdata($post):
-            ?>
-                <article>
-                    <a class="h4 text-center my-2" href="<?php echo get_permalink(); ?>">
-                        "<?php the_title(); ?>"</a>
-                </article>
-                <?php endforeach;
-        endif; ?>
-
-            </div>
-            <div>
-                <a href="<?php  echo esc_url( home_url( '/' ) )?>/category/travel">もっと見る</a>
-            </div>
-        </div>
-        <div>
-            <div class="genre-title">
-                <h1>宇都宮</h1>
-            </div>
-            <p>とかいなか宇都宮</p>
-            <div>
-                <?php $args=array(
-                'numberposts'=>3,
-                'category_name'=>"utunomiya",
-            // 'post_type'=>'work',
-            // 'orderby' => 'meta_value',
-            // 'meta_key' => 'work_start', //ACFのフィールド名
-            'order' => 'DESC'
-
-            );
-            $customPost=get_posts($args);
-            if($customPost):
-                foreach($customPost as $post):
-                    // setup_postdata($post):
-            ?>
-                <article>
-                    <a class="h4 text-center my-2" href="<?php echo get_permalink(); ?>">
-                        "<?php the_title(); ?>"</a>
-                </article>
-                <?php endforeach;
-        endif; ?>
-
-            </div>
-            <div>
-                <a href="<?php  echo esc_url( home_url( '/' ) )?>/category/utunomiya">もっと見る</a>
-            </div>
-        </div>
-        <div>
-            <div class="genre-title">
-                <h1><i class="fas fa-home"></i>生活向上</h1>
-            </div>
-            <p>よりよいモダンな暮らしを求めて。</p>
-            <div>
-                <?php $args=array(
-                'numberposts'=>3,
-                'category_name'=>"life",
-            // 'post_type'=>'work',
-            // 'orderby' => 'meta_value',
-            // 'meta_key' => 'work_start', //ACFのフィールド名
-            'order' => 'DESC'
-
-            );
-            $customPost=get_posts($args);
-            if($customPost):
-                foreach($customPost as $post):
-                    // setup_postdata($post):
-            ?>
-                <article>
-                    <a class="h4 text-center my-2" href="<?php echo get_permalink(); ?>">
-                        "<?php the_title(); ?>"</a>
-                </article>
-                <?php endforeach;
-        endif; ?>
-
-            </div>
-            <div>
-                <a href="<?php  echo esc_url( home_url( '/' ) )?>/category/utunomiya">もっと見る</a>
-            </div>
-        </div>
-        <div>
-            <div class="genre-title">
-                <h1><i class="fas fa-home"></i>プログラミング</h1>
-            </div>
-            <p>ただの趣味です。</p>
-            <div>
-                <?php $args=array(
-                'numberposts'=>3,
-                'category_name'=>"programing",
-            // 'post_type'=>'work',
-            // 'orderby' => 'meta_value',
-            // 'meta_key' => 'work_start', //ACFのフィールド名
-            'order' => 'DESC'
-
-            );
-            $customPost=get_posts($args);
-            if($customPost):
-                foreach($customPost as $post):
-                    // setup_postdata($post):
-            ?>
-                <article>
-                    <a class="h4 text-center my-2" href="<?php echo get_permalink(); ?>">
-                        "<?php the_title(); ?>"</a>
-                </article>
-                <?php endforeach;
-        endif; ?>
-
-            </div>
-            <div>
-                <a href="<?php  echo esc_url( home_url( '/' ) )?>/category/utunomiya">もっと見る</a>
-            </div>
-        </div>
-    </main>
     <!-- functions.phpで設定したウィジェット（フッター用）の読み込み -->
     <div id="footerwidget">
         <?php dynamic_sidebar('footerwidget'); ?>
     </div>
+    <a class="text-left p-4 bg-gray-600 text-white hover:text-black kiwi-maru" href="#page_top">ページトップへ<i
+            class="fas fa-arrow-up"></i></a>
+    <div class="flex justify-center">
 
-    <!-- functions.phpで設定したメニューの読み込み -->
-    <nav id="menu-footer">
-        <?php wp_nav_menu(
-	array (
-		'theme_location' => 'footer'
-	)
-); ?>
-    </nav>
+        <p>
+            <a class="text-center p-4 kiwi-maru" href="<?php echo home_url( '/' ) ?>"><i
+                    class="fas fa-home"></i><br>ホーム</a>
+        </p>
+    </div>
 
-    <p class="copyright">&copy; <?php echo date('Y');?> <?php echo get_bloginfo('name');?>.</p>
+
+    <p class="copyright text-center py-8 kiwi-maru ">&copy; <?php echo date('Y');?>usuyuki</p>
 </footer>
 
 

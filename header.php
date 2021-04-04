@@ -45,7 +45,7 @@
 
 <body>
 
-    <header class="main-head">
+    <header class="main-head" id="page_top">
         <h1 class="site_title">
             <a href="<?php echo get_home_url();?>"> <img src="<?php
 echo get_template_directory_uri();
