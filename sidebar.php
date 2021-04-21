@@ -1,2 +1,2 @@
 <!-- sidebar -->
-<aside id="sidebar" class="ml-16 w-2/5"><?php dynamic_sidebar( 'sidenavi' ); ?></aside>
+<aside id="sidebar" class="ml-16 w-1/2"><?php dynamic_sidebar( 'sidenavi' ); ?></aside>

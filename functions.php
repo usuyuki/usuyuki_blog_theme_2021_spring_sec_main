@@ -36,6 +36,14 @@ register_sidebar(array(
 	 'before_title' => '<h2 class="footer_widget_title">',
 	 'after_title' => '</h2>'
 ));
+register_sidebar(array(
+	 'name' => 'サイド目次',
+	 'id' => 'side-table-of-content' ,
+	 'before_widget' => '<div class="footer_widget">',
+	 'after_widget' => '</div>',
+	 'before_title' => '<h2 class="footer_widget_title">',
+	 'after_title' => '</h2>'
+));
 }
 add_action( 'widgets_init', 'theme_slug_widgets_init' );
 

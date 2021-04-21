@@ -1,3 +1,5 @@
+/** @format */
+
 @charset "utf-8";
 /*
 Theme Name : うすゆきブログテーマ2021春-second
@@ -11,6 +13,65 @@ body {
   background-color: #f9fafb;
   color: #474747;
   /* overflow: hidden; */
+}
+/* 記事のスタイル */
+
+/* 目次 */
+#toc_container {
+  font-size: 16px;
+  margin: 8px auto;
+  padding: 16px;
+}
+#toc_container a {
+  font-size: 20px;
+}
+/* #toc_container a::after {
+  font-family: "Font Awesome 5 Free";
+  font-size: 16px;
+  font-weight: 400;
+  content: "\f0c1";
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 16px;
+} */
+/* 詩 */
+.wp-block-table tr {
+  width: 100%;
+}
+
+.wp-block-table {
+  margin: 8px auto;
+  padding: 16px;
+  border: 1px solid black;
+}
+.wp-block-verse {
+  margin: 24px auto;
+  padding: 16px;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+.wp-block-image {
+  margin: 24px auto;
+}
+/* 画像キャプション */
+figcaption {
+  /* font-size: 12px; */
+  text-align: center;
+  color: gray;
+}
+
+/* 段落ごとの感覚 */
+.entry-content p {
+  margin: 24px auto;
+}
+.entry-content h2 {
+  font-weight: bold;
+  font-size: 1.7em;
+  border-bottom: 1px solid black;
+  margin: 24px 0;
 }
 /* 基本 */
 p {
