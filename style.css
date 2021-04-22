@@ -70,8 +70,26 @@ figcaption {
 .entry-content h2 {
   font-weight: bold;
   font-size: 1.7em;
+  border-bottom: 2px solid black;
+  margin: 24px 0;
+}
+.entry-content h3 {
+  font-weight: bold;
+  font-size: 1.4em;
   border-bottom: 1px solid black;
   margin: 24px 0;
+}
+.entry-content h4 {
+  font-weight: bold;
+  font-size: 1.2em;
+  border-bottom: 1px dotted black;
+  margin: 24px 0;
+}
+.entry-content h3::before {
+  content: "-";
+}
+.entry-content h4::before {
+  content: "--";
 }
 /* 基本 */
 p {
