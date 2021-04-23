@@ -5,16 +5,16 @@ Template Post Type: post
 */
 ?>
 <?php get_header(); ?>
-<div class="md:grid grid-cols-8 w-screen">
+<div class="md:grid grid-cols-8 w-full">
     <div class="col-span-2 md:block hidden">
         <!-- sidebar -->
-        <aside id="" class="mt-4 border border-green-300 rounded-2xl p-12 sticky top-0 mx-12 w-1/2">
+        <aside id="" class="mt-4 border border-green-300 rounded-2xl p-12 sticky top-0 mx-12 ">
             <?php dynamic_sidebar( 'side-table-of-content' ); ?></aside>
     </div>
     <div id="template-single" class="col-span-4 md:mx-0 mx-4 ">
 
         <!-- タイトルなど基本情報の読み込み -->
-        <div class="entry-header">
+        <div class="entry-header mt-4">
             <div class="flex items-center w-full blurBg"
                 style="height:50vh;background-image:url(<?php the_post_thumbnail_url( 'large' ); ?>)">
 

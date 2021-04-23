@@ -62,10 +62,21 @@ figcaption {
   text-align: center;
   color: gray;
 }
-
+/* コードコーナー */
+.wp-block-code {
+  background-color: #e4e4e4;
+  padding: 12px;
+}
+/* 引用 */
+.wp-block-quote {
+  margin: 1em;
+  padding: 0.5em 12px 12px;
+  border-left: 4px solid black;
+}
 /* 段落ごとの感覚 */
 .entry-content p {
-  margin: 24px auto;
+  font-size: 18px;
+  margin: 1em auto;
 }
 .entry-content h2 {
   font-weight: bold;
