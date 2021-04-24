@@ -42,6 +42,14 @@ window.WebFontConfig = {
     s.parentNode.insertBefore(wf, s);
 })();
 </script>
+
+<script>
+// コンソール上に画像表示
+console.log("%c ",
+    'background: url(<?php echo get_template_directory_uri();?>/img/usuyukilogo2021spring.png); background-size: 100% 100%; padding: 128px 200px'
+);
+</script>
+
 <?php wp_footer(); 
 //wp_footerの中でwo_footer読み込んでいて、なにこれ？ってなるけど、これであっているらしい。?>
 </body>

@@ -44,9 +44,16 @@ body {
 
 .wp-block-table {
   margin: 8px auto;
-  padding: 16px;
-  border: 1px solid black;
+  /* padding: 16px; */
+  /* border: 1px solid black; */
 }
+.wp-block-table table,
+td,
+th {
+  border: 1px gray solid;
+  padding: 0.5em 0.3em;
+}
+
 .wp-block-verse {
   margin: 24px auto;
   padding: 16px;
@@ -69,7 +76,7 @@ figcaption {
 }
 /* 引用 */
 .wp-block-quote {
-  margin: 1em;
+  margin: 1em 0px;
   padding: 0.5em 12px 12px;
   border-left: 4px solid black;
 }
@@ -83,6 +90,28 @@ figcaption {
   font-size: 1.7em;
   border-bottom: 2px solid black;
   margin: 24px 0;
+}
+/* リスト */
+.entry-content ul {
+  /* list-style: none; */
+  list-style: inside;
+}
+/* 上の目次リストとかぶって大変だった */
+/* .entry-content ul:not(.toc_list) > li::before {
+  content: "●";
+  font-size: 0.7em;
+  color: #0bd;
+  padding-right: 1em;
+}
+.entry-content ul > li > ul::before {
+  content: "" !important;
+}
+.entry-content ul > li > li::before {
+  content: "" !important;
+} */
+/* 数付きリスト */
+.entry-content ol {
+  list-style-type: decimal;
 }
 .entry-content h3 {
   font-weight: bold;
@@ -99,7 +128,7 @@ figcaption {
 .entry-content h3::before {
   content: "-";
 }
-.entry-content h4::before {
+.entry-content h4:not(.text-lg)::before {
   content: "--";
 }
 /* 基本 */
