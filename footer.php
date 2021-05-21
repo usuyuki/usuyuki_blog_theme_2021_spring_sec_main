@@ -21,6 +21,34 @@
     <p class="copyright text-center py-8 kiwi-maru ">&copy; <?php echo date('Y');?>usuyuki</p>
 </footer>
 
+<script>
+//Google font の遅延読み込み
+//複数ならgoogle: { families: ['Montserrat:400,600', 'Noto+Sans+JP'] }みたいにつなげるだけ
+//参考→https://mogumogu-design.com/googlefont-yomikomi/
+window.WebFontConfig = {
+    google: {
+        families: ['Kiwi+Maru']
+    },
+    active: function() {
+        sessionStorage.fonts = true;
+    }
+};
+(function() {
+    var wf = document.createElement('script');
+    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+})();
+</script>
+
+<script>
+// コンソール上に画像表示
+console.log("%c ",
+    'background: url(<?php echo get_template_directory_uri();?>/img/usuyukilogo2021spring.png); background-size: 100% 100%; padding: 128px 200px'
+);
+</script>
 
 <?php wp_footer(); 
 //wp_footerの中でwo_footer読み込んでいて、なにこれ？ってなるけど、これであっているらしい。?>

@@ -22,7 +22,7 @@
 
     <div class="my-4">
 
-        <?php echo get_the_date(); ?>
+        <i class="fas fa-clock"></i><?php echo get_the_date(); ?>
     </div>
 
 </article>

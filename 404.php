@@ -1,16 +1,16 @@
 <?php get_header(); ?>
 <div class="100vh">
-    <h1 class="text-center text-3xl kiwi-maru my-4">お探しのページは見つかりません！</h1>
+    <h1 class="text-center text-3xl kiwi-maru my-4">お探しのページは<br class="md:hidden">見つかりません！</h1>
     <h3 class="text-center text-2xl kiwi-maru">404 Not found</h3>
     <?php $random=rand(1, 10);
     if($random %2 ==0): ?>
     <img src="<?php
 echo get_template_directory_uri();
-?>/img/404/6056ea822900a54ca998b1c3_35.png" alt="404のための画像" class="mx-auto object-fill h-1/4 w-1/4">
+?>/img/404/6056ea822900a54ca998b1c3_35.png" alt="404のための画像" class="mx-auto object-fill md:h-1/4 md:w-1/4">
     <?php else:?>
     <img src="<?php
 echo get_template_directory_uri();
-?>/img/404/6065505970e2a264108f93e8_54.png" alt="404のための画像" class="mx-auto object-fill h-1/4 w-1/4">
+?>/img/404/6065505970e2a264108f93e8_54.png" alt="404のための画像" class="mx-auto object-fill md:h-1/4 md:w-1/4">
     <?php endif;?>
     <div>
         <div class="flex justify-center">
@@ -21,8 +21,8 @@ echo get_template_directory_uri();
             </p>
         </div>
     </div>
-    <h2 class="text-center kiwi-maru text-2xl my-8">ジャンルごとの最新記事です。よかったらどうぞ。</h2>
-    <main class="index-grid mx-24 py-12">
+    <h2 class="text-center kiwi-maru text-2xl my-8 mx-2">ジャンルごとの最新記事です。<br class="md:hidden">よかったらどうぞ。</h2>
+    <main class="gird grid-cols-1 md:gird-cols-2 md:mx-24 mx-4 py-12">
 
         <div class="mx-4">
             <div class="genre-title">

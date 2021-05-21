@@ -1,3 +1,5 @@
+/** @format */
+
 @charset "utf-8";
 /*
 Theme Name : うすゆきブログテーマ2021春-second
@@ -12,7 +14,127 @@ body {
   color: #474747;
   /* overflow: hidden; */
 }
+/* 記事のスタイル */
+
+/* 目次 */
+#toc_container {
+  font-size: 16px;
+  margin: 8px auto;
+  padding: 16px;
+}
+#toc_container a {
+  font-size: 20px;
+}
+/* #toc_container a::after {
+  font-family: "Font Awesome 5 Free";
+  font-size: 16px;
+  font-weight: 400;
+  content: "\f0c1";
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 16px;
+} */
+/* 詩 */
+.wp-block-table tr {
+  width: 100%;
+}
+
+.wp-block-table {
+  margin: 8px auto;
+  /* padding: 16px; */
+  /* border: 1px solid black; */
+}
+.wp-block-table table,
+td,
+th {
+  border: 1px gray solid;
+  padding: 0.5em 0.3em;
+}
+
+.wp-block-verse {
+  margin: 24px auto;
+  padding: 16px;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+.wp-block-image {
+  margin: 24px auto;
+}
+/* 画像キャプション */
+figcaption {
+  /* font-size: 12px; */
+  text-align: center;
+  color: gray;
+}
+/* コードコーナー */
+.wp-block-code {
+  background-color: #e4e4e4;
+  padding: 12px;
+}
+/* 引用 */
+.wp-block-quote {
+  margin: 1em 0px;
+  padding: 0.5em 12px 12px;
+  border-left: 4px solid black;
+}
+/* 段落ごとの感覚 */
+.entry-content p {
+  font-size: 18px;
+  margin: 1em auto;
+}
+.entry-content h2 {
+  font-weight: bold;
+  font-size: 1.7em;
+  border-bottom: 2px solid black;
+  margin: 24px 0;
+}
+/* リスト */
+.entry-content ul {
+  /* list-style: none; */
+  list-style: inside;
+}
+/* 上の目次リストとかぶって大変だった */
+/* .entry-content ul:not(.toc_list) > li::before {
+  content: "●";
+  font-size: 0.7em;
+  color: #0bd;
+  padding-right: 1em;
+}
+.entry-content ul > li > ul::before {
+  content: "" !important;
+}
+.entry-content ul > li > li::before {
+  content: "" !important;
+} */
+/* 数付きリスト */
+.entry-content ol {
+  list-style-type: decimal;
+}
+.entry-content h3 {
+  font-weight: bold;
+  font-size: 1.4em;
+  border-bottom: 1px solid black;
+  margin: 24px 0;
+}
+.entry-content h4 {
+  font-weight: bold;
+  font-size: 1.2em;
+  border-bottom: 1px dotted black;
+  margin: 24px 0;
+}
+.entry-content h3::before {
+  content: "-";
+}
+.entry-content h4:not(.text-lg)::before {
+  content: "--";
+}
 /* 基本 */
+p {
+  word-break: break-all; /* 要素のはみ出し防止 */
+}
 a {
   word-break: break-all; /* 要素のはみ出し防止 */
   -webkit-transition: 0.3s ease-in-out;
@@ -225,6 +347,17 @@ h1 span {
 .card-image img {
   margin: 0 auto;
   border-radius: 12px;
+}
+.card-image-sp img {
+  margin: 0 auto;
+  border-radius: 12px;
+  /* ↓WPでサムネでるからいらない */
+  /* object-fit: cover;
+  width: 30vw;
+  height: 30vw; */
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
 }
 .card-border-tegaki {
   /* セロハンテープに書いている風にしたい */

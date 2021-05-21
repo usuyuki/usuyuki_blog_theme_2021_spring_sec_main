@@ -16,9 +16,7 @@
     <!-- tailwind読み込み -->
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <!-- googleフォント読み込みKiwi Maru -->
-    <!-- font-family: 'Kiwi Maru', serif; -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <!-- 高速化のため、googlefontの読み込みはjsで遅延読み込みに変更。 -->
 
 
     <!-- Font Awesome読み込み -->

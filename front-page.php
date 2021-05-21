@@ -70,7 +70,7 @@ echo get_template_directory_uri();
     </div>
 </div>
 <div class="">
-    <div class="circle-anime1 h-4 w-4 bg-green-500 rounded-full inline-block">
+    <div class="circle-anime1 h-4 w-4 bg-green-500 rounded-full inline-block mt-4">
 
     </div>
 
@@ -79,7 +79,7 @@ echo get_template_directory_uri();
 
     <div class="flex justify-center wrap mt-8 flex-wrap">
         <?php $args=array(
-                'numberposts'=>4,
+                'numberposts'=>10,
              
             // 'post_type'=>'work',
             // 'orderby' => 'meta_value',
@@ -93,13 +93,20 @@ echo get_template_directory_uri();
                     // setup_postdata($post):
             ?>
 
-        <?php get_template_part( 'template/article/article_template' ); ?>
+        <?php
+        if(wp_is_mobile()){
+            get_template_part( 'template/article/article_template_sp' ); 
+
+        }else{
+            get_template_part( 'template/article/article_template_pc' ); 
+        }
+        ?>
         <?php endforeach;
         endif; ?>
 
     </div>
     <div class="mx-auto text-center my-8">
-        <a class="btn-motto" href="<?php echo home_url( '/allpost' ) ?>">もっと見る！</a>
+        <a class="btn-motto" href="<?php echo home_url( '/allposts' ) ?>">もっと見る！</a>
     </div>
 
     <div class="circle-anime2 h-4 w-4 bg-blue-500 rounded-full inline-block">
@@ -110,8 +117,8 @@ echo get_template_directory_uri();
 
 <!-- ジャンルかたまりここから -->
 <?php  
-$slugs=["travel","life","utunomiya","programing"];
-$names=["旅","生活向上","宇都宮","プログラミング"];
+$slugs=["programing","travel","life","utunomiya"];
+$names=["プログラミング","旅","生活向上","宇都宮",];
 $counter=0;
 ?>
 <?php foreach($slugs as $slug):?>
@@ -121,7 +128,7 @@ $counter=0;
 </div>
 <div class="flex justify-center wrap mt-8 flex-wrap">
     <?php $args=array(
-                'numberposts'=>3,
+                'numberposts'=>5,
              
                 'category_name'=>$slug,
             // 'orderby' => 'meta_value',
@@ -135,7 +142,14 @@ $counter=0;
                     // setup_postdata($post):
             ?>
 
-    <?php get_template_part( 'template/article/article_template' ); ?>
+    <?php 
+      if(wp_is_mobile()){
+        get_template_part( 'template/article/article_template_sp' ); 
+
+    }else{
+        get_template_part( 'template/article/article_template_pc' ); 
+    }
+    ?>
     <?php endforeach;
         endif; ?>
 
@@ -146,6 +160,28 @@ $counter=0;
 <div class="w-1/2 mx-auto " style="border:1px dashed black;"></div>
 <?php $counter+=1;
 endforeach; ?>
+<div>
+    <div class="flex justify-center">
+        <h3 class="text-center text-3xl two-square kiwi-maru h2-bou inline mt-20">プログラミング系記事について</h3>
+    </div>
+    <p class="text-center mx-2 my-4">プログラミング系はQiitaやZennに投稿すること多めです。下記ロゴからアクセスいただけます。</p>
+    <div class="flex justify-center">
+        <div class="mx-2">
+            <a target="_blank" rel="noopener" class="mx-4" href="https://qiita.com/Usuyuki">
+                <img src="<?php
+echo get_template_directory_uri();
+?>/img/logo/qiita-logo.png" alt="qiita" class=" object-fill  h-auto" style="width:300px">
+            </a>
+        </div>
+        <div class="mx-2 flex items-center">
+            <a target="_blank" rel="noopener" class="mx-4 " href="https://zenn.dev/usuyuki">
+                <img src="<?php
+echo get_template_directory_uri();
+?>/img/logo/zenn-logo.png" alt="qiita" class=" object-fill h-auto" style="width:300px">
+            </a>
+        </div>
+    </div>
+</div>
 <!-- ジャンルかたまりここまで -->
 
 
