@@ -8,13 +8,38 @@
         <?php dynamic_sidebar('footerwidget'); ?>
     </div>
     <a class="text-left p-4 bg-gray-600 text-white hover:text-black kiwi-maru" href="#page_top">ページトップへ<i
-            class="fas fa-arrow-up"></i></a>
-    <div class="flex justify-center">
+            class="fas w-24 fa-arrow-up"></i></a>
+    <div class="flex justify-center items-start my-4 mx-4 flex-wrap">
+        <div class="my-2 mx-2">
+            <a class="text-center p-4 kiwi-maru flex flex-wrap w-24 justify-center"
+                href="<?php echo home_url( '/' ) ?>">
+                <i class="fas w-24 fa-home"></i>
+                <span>ホーム</span>
+            </a>
+        </div>
+        <div class="my-2 mx-2">
+            <a class="text-center p-4 kiwi-maru flex flex-wrap w-24 justify-center"
+                href="<?php echo home_url( '/category/programing/' ) ?>">
+                <i class="fas w-24 fa-code"></i>
+                <span>プログラミング</span>
+            </a>
+        </div>
+        <div class="my-2 mx-2">
+            <a class="text-center p-4 kiwi-maru flex flex-wrap w-24 justify-center"
+                href="<?php echo home_url( '/category/travel/' ) ?>">
+                <i class="fas w-24 fa-route"></i>
+                <span>旅</span>
+            </a>
 
-        <p>
-            <a class="text-center p-4 kiwi-maru" href="<?php echo home_url( '/' ) ?>"><i
-                    class="fas fa-home"></i><br>ホーム</a>
-        </p>
+        </div>
+        <div class="my-2 mx-2">
+            <a class="text-center p-4 kiwi-maru flex flex-wrap w-24 justify-center"
+                href="<?php echo home_url( '/category/life/'  ) ?>">
+                <i class="fas w-24 fa-bed"></i>
+                <span>生活向上</span>
+            </a>
+
+        </div>
     </div>
 
 
