@@ -37,44 +37,40 @@ get_header();
             <h3 class="widgettitle"><?php esc_html_e( 'Categories', 'wp-search-with-algolia' ); ?></h3>
             <section class="ais-facets" id="facet-categories"></section>
         </div>
-        <div>
+        <!-- <div>
             <h3 class="widgettitle"><?php esc_html_e( 'Tags', 'wp-search-with-algolia' ); ?></h3>
             <section class="ais-facets" id="facet-tags"></section>
-        </div>
-        <div>
+        </div> -->
+        <!-- <div>
             <h3 class="widgettitle"><?php esc_html_e( 'Users', 'wp-search-with-algolia' ); ?></h3>
             <section class="ais-facets" id="facet-users"></section>
-        </div>
+        </div> -->
     </aside>
 </div>
 
 <script type="text/html" id="tmpl-instantsearch-hit">
-<article itemtype="http://schema.org/Article">
-    <# if ( data.images.thumbnail ) { #>
-        <div class="ais-hits--thumbnail">
-            <a href="{{ data.permalink  }}" title="{{ data.post_title  }}" class="ais-hits--thumbnail-link">
-                <img src="{{ data.images.thumbnail.url  }}" alt="{{ data.post_title  }}" title="{{ data.post_title  }}"
-                    itemprop="image" />
-            </a>
-        </div>
-        <# } #>
+		<article itemtype="http://schema.org/Article">
+			<# if ( data.images.thumbnail ) { #>
+				<div class="ais-hits--thumbnail">
+					<a href="{{ data.permalink }}" title="{{ data.post_title }}" class="ais-hits--thumbnail-link">
+						<img src="{{ data.images.thumbnail.url }}" alt="{{ data.post_title }}" title="{{ data.post_title }}" itemprop="image" />
+					</a>
+				</div>
+			<# } #>
 
-            <div class="ais-hits--content">
-                <h2 itemprop="name headline"><a href="{{ data.permalink  }}" title="{{ data.post_title  }}"
-                        class="ais-hits--title-link" itemprop="url">{{ { data._highlightResult.post_title.value  }}}</a>
-                </h2>
-                <div class="excerpt">
-                    <p>
-                        <# if ( data._snippetResult['content'] ) { #>
-                            <span
-                                class="suggestion-post-content ais-hits--content-snippet">{{ { data._snippetResult['content'].value  }}}</span>
-                            <# } #>
-                    </p>
-                </div>
-            </div>
-            <div class="ais-clearfix"></div>
-</article>
-</script>
+			<div class="ais-hits--content">
+				<h2 itemprop="name headline"><a href="{{ data.permalink }}" title="{{ data.post_title }}" class="ais-hits--title-link" itemprop="url">{{{ data._highlightResult.post_title.value }}}</a></h2>
+				<div class="excerpt">
+					<p>
+						<# if ( data._snippetResult['content'] ) { #>
+							<span class="suggestion-post-content ais-hits--content-snippet">{{{ data._snippetResult['content'].value }}}</span>
+						<# } #>
+					</p>
+				</div>
+			</div>
+			<div class="ais-clearfix"></div>
+		</article>
+	</script>
 
 
 <script type="text/javascript">
@@ -84,7 +80,7 @@ jQuery(function() {
         if (algolia.indices.searchable_posts === undefined && jQuery('.admin-bar').length > 0) {
             alert(
                 'It looks like you haven\'t indexed the searchable posts index. Please head to the Indexing page of the Algolia Search plugin and index it.'
-                );
+            );
         }
 
         /* Instantiate instantsearch.js */
@@ -126,10 +122,10 @@ jQuery(function() {
                 searchAsYouType: false,
             }),
 
-            /* Stats widget */
-            instantsearch.widgets.stats({
-                container: '#algolia-stats'
-            }),
+            // /* Stats widget */
+            // instantsearch.widgets.stats({
+            //     container: '#algolia-stats'
+            // }),
 
             /* Hits widget */
             instantsearch.widgets.hits({
@@ -145,7 +141,8 @@ jQuery(function() {
                         function replace_highlights_recursive(item) {
                             if (item instanceof Object && item.hasOwnProperty('value')) {
                                 item.value = _.escape(item.value);
-                                item.value = item.value.replace(/__ais-highlight__/g, '<em>')
+                                item.value = item.value.replace(/__ais-highlight__/g,
+                                        '<em>')
                                     .replace(/__\/ais-highlight__/g, '</em>');
                             } else {
                                 for (var key in item) {
@@ -157,7 +154,8 @@ jQuery(function() {
 
                         hit._highlightResult = replace_highlights_recursive(hit
                             ._highlightResult);
-                        hit._snippetResult = replace_highlights_recursive(hit._snippetResult);
+                        hit._snippetResult = replace_highlights_recursive(hit
+                            ._snippetResult);
 
                         return hit;
                     }
@@ -170,12 +168,12 @@ jQuery(function() {
             }),
 
             /* Post types refinement widget */
-            instantsearch.widgets.menu({
-                container: '#facet-post-types',
-                attribute: 'post_type_label',
-                sortBy: ['isRefined:desc', 'count:desc', 'name:asc'],
-                limit: 10,
-            }),
+            // instantsearch.widgets.menu({
+            //     container: '#facet-post-types',
+            //     attribute: 'post_type_label',
+            //     sortBy: ['isRefined:desc', 'count:desc', 'name:asc'],
+            //     limit: 10,
+            // }),
 
             /* Categories refinement widget */
             instantsearch.widgets.hierarchicalMenu({
@@ -189,21 +187,21 @@ jQuery(function() {
             }),
 
             /* Tags refinement widget */
-            instantsearch.widgets.refinementList({
-                container: '#facet-tags',
-                attribute: 'taxonomies.post_tag',
-                operator: 'and',
-                limit: 15,
-                sortBy: ['isRefined:desc', 'count:desc', 'name:asc'],
-            }),
+            // instantsearch.widgets.refinementList({
+            //     container: '#facet-tags',
+            //     attribute: 'taxonomies.post_tag',
+            //     operator: 'and',
+            //     limit: 15,
+            //     sortBy: ['isRefined:desc', 'count:desc', 'name:asc'],
+            // }),
 
             /* Users refinement widget */
-            instantsearch.widgets.menu({
-                container: '#facet-users',
-                attribute: 'post_author.display_name',
-                sortBy: ['isRefined:desc', 'count:desc', 'name:asc'],
-                limit: 10,
-            }),
+            // instantsearch.widgets.menu({
+            //     container: '#facet-users',
+            //     attribute: 'post_author.display_name',
+            //     sortBy: ['isRefined:desc', 'count:desc', 'name:asc'],
+            //     limit: 10,
+            // }),
 
             /* Search powered-by widget */
             instantsearch.widgets.poweredBy({
