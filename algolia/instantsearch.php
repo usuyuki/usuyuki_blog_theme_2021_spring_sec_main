@@ -29,10 +29,10 @@ get_header();
         <div id="algolia-pagination"></div>
     </main>
     <aside id="ais-facets">
-        <div>
+        <!-- <div>
             <h3 class="widgettitle"><?php esc_html_e( 'Post Types', 'wp-search-with-algolia' ); ?></h3>
             <section class="ais-facets" id="facet-post-types"></section>
-        </div>
+        </div> -->
         <div>
             <h3 class="widgettitle"><?php esc_html_e( 'Categories', 'wp-search-with-algolia' ); ?></h3>
             <section class="ais-facets" id="facet-categories"></section>
@@ -49,28 +49,42 @@ get_header();
 </div>
 
 <script type="text/html" id="tmpl-instantsearch-hit">
-		<article itemtype="http://schema.org/Article">
-			<# if ( data.images.thumbnail ) { #>
-				<div class="ais-hits--thumbnail">
-					<a href="{{ data.permalink }}" title="{{ data.post_title }}" class="ais-hits--thumbnail-link">
-						<img src="{{ data.images.thumbnail.url }}" alt="{{ data.post_title }}" title="{{ data.post_title }}" itemprop="image" />
-					</a>
-				</div>
-			<# } #>
+<article itemtype="http://schema.org/Article">
+    <# if ( data.images.thumbnail ) { #>
+        <div class="ais-hits--thumbnail">
+            <a href="{{ data.permalink  }}" title="{{ data.post_title  }}" class="ais-hits--thumbnail-link">
+                <img src="{{ data.images.thumbnail.url  }}" alt="{{ data.post_title  }}" title="{{ data.post_title  }}"
+                    itemprop="image" />
+            </a>
+        </div>
+        <# }else{ #>
+            <div class="ais-hits--thumbnail">
+                <a href="{{ data.permalink  }}" title="{{ data.post_title  }}" class="ais-hits--thumbnail-link">
+                    <div
+                        style="width:150px;height:150px;display:flex;justify-content:center;align-items:center;border-radius: 3px;background-color:gray;">
+                        <p style="color:white">画像がありません</p>
+                    </div>
+                </a>
+            </div>
+            <# } #>
 
-			<div class="ais-hits--content">
-				<h2 itemprop="name headline"><a href="{{ data.permalink }}" title="{{ data.post_title }}" class="ais-hits--title-link" itemprop="url">{{{ data._highlightResult.post_title.value }}}</a></h2>
-				<div class="excerpt">
-					<p>
-						<# if ( data._snippetResult['content'] ) { #>
-							<span class="suggestion-post-content ais-hits--content-snippet">{{{ data._snippetResult['content'].value }}}</span>
-						<# } #>
-					</p>
-				</div>
-			</div>
-			<div class="ais-clearfix"></div>
-		</article>
-	</script>
+                <div class="ais-hits--content">
+                    <h2 itemprop="name headline"><a href="{{ data.permalink  }}" title="{{ data.post_title  }}"
+                            class="ais-hits--title-link"
+                            itemprop="url">{{ data._highlightResult.post_title.value  }}</a>
+                    </h2>
+                    <div class="excerpt">
+                        <p>
+                            <# if ( data._snippetResult['content'] ) { #>
+                                <span
+                                    class="suggestion-post-content ais-hits--content-snippet">{{ data._snippetResult['content'].value  }}</span>
+                                <# } #>
+                        </p>
+                    </div>
+                </div>
+                <div class="ais-clearfix"></div>
+</article>
+</script>
 
 
 <script type="text/javascript">
@@ -115,7 +129,7 @@ jQuery(function() {
             /* Search box widget */
             instantsearch.widgets.searchBox({
                 container: '#algolia-search-box',
-                placeholder: 'Search for...',
+                placeholder: '全文検索',
                 showReset: false,
                 showSubmit: false,
                 showLoadingIndicator: false,
