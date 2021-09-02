@@ -24,7 +24,8 @@ Template Post Type: post
                     <!--投稿日-->
                     <p class="text-right text-white mr-4">
                         <?php echo mysql2date('Y年n月j日', $post->post_date); ?></p>
-                    <p class="my-4 text-center">
+                    <!-- 投稿カテゴリ -->
+                    <div class="my-4 text-center">
                         <?php
 $categories = get_the_category();
 //選択したカテゴリ全て表示
@@ -35,32 +36,22 @@ foreach($categories as $category){
 echo '<a href="'.get_category_link($categories[0]->term_id).'">'.$categories[0]->name.'</a>';
 */
 ?>
+                    </div>
                 </div>
-
-
             </div>
-
-
-            <!--投稿カテゴリ-->
-
-            </p>
-
-
         </div>
+        <!-- 基本情報ここまで -->
 
         <!-- 本文の読み込み -->
         <div class="entry-content">
             <?php
-if(have_posts()){
-	while(have_posts()){
-		the_post();
-		the_content();
-	}
-} ?>
+            if(have_posts()){
+                while(have_posts()){
+                    the_post();
+                    the_content();
+                }
+            } ?>
         </div>
-
-
-
     </div>
     <div class="md:block hidden">
 
