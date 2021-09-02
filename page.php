@@ -27,15 +27,15 @@ Template Post Type: post
                     <!-- 投稿カテゴリ -->
                     <div class="my-4 text-center">
                         <?php
-$categories = get_the_category();
-//選択したカテゴリ全て表示
-foreach($categories as $category){
-	echo '<a class="card-border-tegaki-for-single mx-4" href="'.get_category_link($category->term_id).'">'.$category->name.'</a>';
-}
-/* // 最初の一つだけ表示する場合はこちら //
-echo '<a href="'.get_category_link($categories[0]->term_id).'">'.$categories[0]->name.'</a>';
-*/
-?>
+                        $categories = get_the_category();
+                        //選択したカテゴリ全て表示
+                        foreach($categories as $category){
+                            echo '<a class="card-border-tegaki-for-single mx-4" href="'.get_category_link($category->term_id).'">'.$category->name.'</a>';
+                        }
+                        /* // 最初の一つだけ表示する場合はこちら //
+                        echo '<a href="'.get_category_link($categories[0]->term_id).'">'.$categories[0]->name.'</a>';
+                        */
+                        ?>
                     </div>
                 </div>
             </div>

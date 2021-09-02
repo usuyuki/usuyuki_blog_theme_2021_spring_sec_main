@@ -22,51 +22,44 @@ Template Post Type: post
                 <div class="w-full" style="background-color:rgba(0,0,0,.7)">
                     <!--タイトル-->
                     <h1 class="text-white text-center text-2xl font-bold kiwi-maru my-4 px-12">
-                        <?php the_title();?></h1>
+                        <?php the_title();?>
+                    </h1>
                     <!--投稿日-->
                     <p class="text-right text-white mr-4">
-                        <?php echo mysql2date('Y年n月j日', $post->post_date); ?></p>
-                    <p class="my-4 text-center">
+                        <?php echo mysql2date('Y年n月j日', $post->post_date); ?>
+                    </p>
+                    <!--投稿カテゴリ-->
+                    <div class="my-4 text-center">
                         <?php
-$categories = get_the_category();
-//選択したカテゴリ全て表示
-foreach($categories as $category){
-	echo '<a class="card-border-tegaki-for-single mx-4" href="'.get_category_link($category->term_id).'">'.$category->name.'</a>';
-}
-/* // 最初の一つだけ表示する場合はこちら //
-echo '<a href="'.get_category_link($categories[0]->term_id).'">'.$categories[0]->name.'</a>';
-*/
-?>
+                        $categories = get_the_category();
+                        //選択したカテゴリ全て表示
+                        foreach($categories as $category){
+                            echo '<a class="card-border-tegaki-for-single mx-4" href="'.get_category_link($category->term_id).'">'.$category->name.'</a>';
+                        }
+                        /* // 最初の一つだけ表示する場合はこちら //
+                        echo '<a href="'.get_category_link($categories[0]->term_id).'">'.$categories[0]->name.'</a>';
+                        */
+                        ?>
+                    </div>
                 </div>
-
-
             </div>
-
-
-            <!--投稿カテゴリ-->
-
-            </p>
-
-
         </div>
-
+        <!-- タイトルなど基本情報の読み込みここまで -->
         <!-- 本文の読み込み -->
         <div class="entry-content">
             <?php
-if(have_posts()){
-	while(have_posts()){
-		the_post();
-		the_content();
-	}
-} ?>
+            if(have_posts()){
+                while(have_posts()){
+                    the_post();
+                    the_content();
+                }
+            } ?>
         </div>
-
-
-
     </div>
     <div class="col-span-2 md:block hidden">
 
         <?php get_sidebar(); ?>
     </div>
+
 </div>
 <?php get_footer(); ?>
