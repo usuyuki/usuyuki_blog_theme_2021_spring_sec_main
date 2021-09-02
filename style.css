@@ -143,6 +143,11 @@ a {
   transition: 0.3s ease-in-out;
 }
 
+/* 本文のaタグに色つける */
+.entry-content a {
+  color: #3177a3;
+}
+
 a:hover {
   color: #1da1f2;
   -webkit-transition: 0.3s ease-in-out;

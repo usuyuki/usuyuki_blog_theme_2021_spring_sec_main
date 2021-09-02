@@ -117,8 +117,8 @@ echo get_template_directory_uri();
 
 <!-- ジャンルかたまりここから -->
 <?php  
-$slugs=["programing","travel","life","utunomiya"];
-$names=["プログラミング","旅","生活向上","宇都宮",];
+$slugs=["programing","travel","life",];
+$names=["プログラミング","旅","生活向上",];
 $counter=0;
 ?>
 <?php foreach($slugs as $slug):?>
@@ -178,6 +178,21 @@ echo get_template_directory_uri();
                 <img src="<?php
 echo get_template_directory_uri();
 ?>/img/logo/zenn-logo.png" alt="qiita" class=" object-fill h-auto" style="width:300px">
+            </a>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="flex justify-center">
+        <h3 class="text-center text-3xl two-square kiwi-maru h2-bou inline mt-20">制作物について</h3>
+    </div>
+    <p class="text-center mx-2 my-4">制作物はブログではなく、ポートフォリオに投稿しています！</p>
+    <div class="flex justify-center">
+        <div class="mx-2">
+            <a target="_blank" rel="noopener" class="mx-4" href="https://usuyuki.net">
+                <img src="<?php
+echo get_template_directory_uri();
+?>/img/logo/portfolio_title20201027.png" alt="ポートフォリオ" class=" object-fill  h-auto" style="width:300px">
             </a>
         </div>
     </div>
