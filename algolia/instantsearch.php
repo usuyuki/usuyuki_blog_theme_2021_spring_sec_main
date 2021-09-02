@@ -26,6 +26,7 @@ get_header();
         padding-left: 0.5em;
         padding-right: 0.5em;
         border: 1px solid black;
+        border-radius: 6px;
     }
 
     .ais-Pagination-item--selected {

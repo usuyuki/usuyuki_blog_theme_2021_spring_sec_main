@@ -128,7 +128,7 @@ $counter=0;
 </div>
 <div class="flex justify-center wrap mt-8 flex-wrap">
     <?php $args=array(
-                'numberposts'=>5,
+                'numberposts'=>4,
              
                 'category_name'=>$slug,
             // 'orderby' => 'meta_value',
