@@ -43,14 +43,25 @@
 
 <body>
 
-    <header class="main-head" id="page_top">
-        <h1 class="site_title">
-            <a href="<?php echo get_home_url();?>"> <img src="<?php
+    <header class="main-head " id="page_top">
+        <div style="max-width:1200px" class="flex justify-around mx-auto">
+
+            <div class="flex items-center w-1/3 md:ml-4 hidden md:block mt-2">
+
+                <a class="text-center p-4 kiwi-maru" href="<?php echo home_url( '/' ) ?>"><i
+                        class="fas fa-home"></i><br>ホーム</a>
+
+            </div>
+            <h1 class="site_title w-1/3 hidden md:block">
+                <a href="<?php echo get_home_url();?>"> <img src="<?php
 echo get_template_directory_uri();
 ?>/img/usuyukilogo2021spring.png" alt="うすゆきブログ" class="mx-auto py-2" style="height:60px"></a>
-        </h1>
+            </h1>
+            <div class="w-1/3 flex md:justify-end justify-center items-center">
+                <?php get_search_form(); ?>
+            </div>
 
-
+        </div>
     </header>
 
     <main>

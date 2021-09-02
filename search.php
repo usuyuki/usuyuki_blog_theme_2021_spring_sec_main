@@ -4,7 +4,7 @@
 
 <!-- タイトルの読み込み -->
 <div class="entry-header">
-    <h2 class="pagetitle">「<?php echo $serchword);?>」検索結果</h2>
+    <h2 class="pagetitle">「<?php echo $serchword;?>」検索結果</h2>
 </div>
 
 <!-- 本文の読み込み -->
