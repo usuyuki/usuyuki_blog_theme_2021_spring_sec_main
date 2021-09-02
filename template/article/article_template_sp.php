@@ -5,7 +5,6 @@
 <article class="w-full border-gray-600 rounded-2xl border-2 text-center my-2 mx-2 p-2" style="background-color:#FFF9E7">
     <a href="<?php echo get_permalink(); ?>" class="flex ">
         <div class="flex items-center justify-center card-image-sp">
-
             <?php echo get_the_post_thumbnail( $post->id, "thumbnail" ); ?>
         </div>
         <div class="mx-4">

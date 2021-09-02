@@ -10,11 +10,7 @@
 <!-- 本文の読み込み -->
 <div class="flex justify-center wrap mt-8 flex-wrap">
     <?php $args=array(
-                'numberposts'=>-1,
-             
-            // 'post_type'=>'work',
-            // 'orderby' => 'meta_value',
-            // 'meta_key' => 'work_start', //ACFのフィールド名
+            'numberposts'=>-1,
             'order' => 'DESC'
 
             );

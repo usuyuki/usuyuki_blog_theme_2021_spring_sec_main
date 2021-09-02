@@ -23,16 +23,16 @@ while(have_posts()){
 }
 ?>
 
-    <?php
+    <?php else: //記事が無い場合 ?>
+    <p>記事がありません。</p>
+    <?php endif; ?>
+</div>
+<?php
 //ページネーションの表示
 $pagination = get_the_posts_pagination();
 //そのまま書き出すとデカデカと「投稿ナビゲーション」と表示されるのでそれを消したものを出力
 $pagination = preg_replace('/\<h2(.*?)\<\/h2\>/', '', $pagination);
 echo $pagination;
 ?>
-    <?php else: //記事が無い場合 ?>
-    <p>記事がありません。</p>
-    <?php endif; ?>
-</div>
 
 <?php get_footer(); ?>

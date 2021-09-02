@@ -10,19 +10,14 @@
             <?php echo get_the_post_thumbnail( $post->id, "thumbnail" ); ?>
         </div>
     </a>
-
     <a href="<?php echo get_permalink(); ?>">
         <h4 class="my-4 text-lg font-bold text-center"><?php echo get_the_title(); ?></h4>
     </a>
-
     <div class="mx-4 my-4">
         <?php echo the_excerpt(); ?>
     </div>
-
-
     <div class="my-4">
 
         <i class="fas fa-clock"></i><?php echo get_the_date(); ?>
     </div>
-
 </article>

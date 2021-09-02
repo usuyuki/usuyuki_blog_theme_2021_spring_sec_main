@@ -12,10 +12,29 @@
 get_header();
 
 ?>
+<style>
+    .ais-Pagination-list{
+        display:flex;
+        flex:wrap;
+        justify-content:center;
+    }
+    .ais-Pagination-item{
+        margin:0.25em;
+        padding:0.4em;
+        font-size:20px;
+        padding-left:0.5em;
+        padding-right:0.5em;
+        border:1px solid black;
+    }
+    .ais-Pagination-item--selected{
+        background-color:black;
+        color:white;
+    }
 
+</style>
 <div id="ais-wrapper">
-    <main id="ais-main">
-        <div class="algolia-search-box-wrapper">
+    <main id="ais-main"class="mx-auto" style="max-width:1200px">
+        <div class="algolia-search-box-wrapper" >
             <div id="algolia-search-box"></div>
             <svg class="search-icon" width="25" height="25" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -28,24 +47,7 @@ get_header();
         <div id="algolia-hits"></div>
         <div id="algolia-pagination"></div>
     </main>
-    <aside id="ais-facets">
-        <!-- <div>
-            <h3 class="widgettitle"><?php esc_html_e( 'Post Types', 'wp-search-with-algolia' ); ?></h3>
-            <section class="ais-facets" id="facet-post-types"></section>
-        </div> -->
-        <div>
-            <h3 class="widgettitle"><?php esc_html_e( 'Categories', 'wp-search-with-algolia' ); ?></h3>
-            <section class="ais-facets" id="facet-categories"></section>
-        </div>
-        <!-- <div>
-            <h3 class="widgettitle"><?php esc_html_e( 'Tags', 'wp-search-with-algolia' ); ?></h3>
-            <section class="ais-facets" id="facet-tags"></section>
-        </div> -->
-        <!-- <div>
-            <h3 class="widgettitle"><?php esc_html_e( 'Users', 'wp-search-with-algolia' ); ?></h3>
-            <section class="ais-facets" id="facet-users"></section>
-        </div> -->
-    </aside>
+
 </div>
 
 <script type="text/html" id="tmpl-instantsearch-hit">
@@ -71,13 +73,13 @@ get_header();
                 <div class="ais-hits--content">
                     <h2 itemprop="name headline"><a href="{{ data.permalink  }}" title="{{ data.post_title  }}"
                             class="ais-hits--title-link"
-                            itemprop="url">{{ data._highlightResult.post_title.value  }}</a>
+                            itemprop="url">{{{ data._highlightResult.post_title.value  }}}</a>
                     </h2>
                     <div class="excerpt">
                         <p>
                             <# if ( data._snippetResult['content'] ) { #>
                                 <span
-                                    class="suggestion-post-content ais-hits--content-snippet">{{ data._snippetResult['content'].value  }}</span>
+                                    class="suggestion-post-content ais-hits--content-snippet">{{{ data._snippetResult['content'].value  }}}</span>
                                 <# } #>
                         </p>
                     </div>
@@ -136,17 +138,22 @@ jQuery(function() {
                 searchAsYouType: false,
             }),
 
-            // /* Stats widget */
-            // instantsearch.widgets.stats({
-            //     container: '#algolia-stats'
-            // }),
+            /* Stats widget */
+            instantsearch.widgets.stats({
+                container: '#algolia-stats',
+                templates: {
+                    text: `
+         {{nbHits}}件の記事が見つかりました。 ({{processingTimeMS}}ms)
+                    `,
+                },
+            }),
 
             /* Hits widget */
             instantsearch.widgets.hits({
                 container: '#algolia-hits',
                 hitsPerPage: 10,
                 templates: {
-                    empty: 'No results were found for "<strong>{{ query }}</strong>".',
+                    empty: '"<strong>{{ query }}</strong>"に関する記事は見つかりませんでした！',
                     item: wp.template('instantsearch-hit')
                 },
                 transformData: {
@@ -190,15 +197,15 @@ jQuery(function() {
             // }),
 
             /* Categories refinement widget */
-            instantsearch.widgets.hierarchicalMenu({
-                container: '#facet-categories',
-                separator: ' > ',
-                sortBy: ['count'],
-                attributes: ['taxonomies_hierarchical.category.lvl0',
-                    'taxonomies_hierarchical.category.lvl1',
-                    'taxonomies_hierarchical.category.lvl2'
-                ],
-            }),
+            // instantsearch.widgets.hierarchicalMenu({
+            //     container: '#facet-categories',
+            //     separator: ' > ',
+            //     sortBy: ['count'],
+            //     attributes: ['taxonomies_hierarchical.category.lvl0',
+            //         'taxonomies_hierarchical.category.lvl1',
+            //         'taxonomies_hierarchical.category.lvl2'
+            //     ],
+            // }),
 
             /* Tags refinement widget */
             // instantsearch.widgets.refinementList({

@@ -432,3 +432,22 @@ h1 span {
   bottom: -5px;
   z-index: -1;
 }
+
+/* ページネーション */
+.nav-links {
+  display: flex;
+  flex: wrap;
+  justify-content: center;
+}
+.page-numbers {
+  margin: 0.25em;
+  padding: 0.4em;
+  font-size: 16px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border: 1px solid black;
+}
+.current {
+  background-color: black;
+  color: white;
+}
