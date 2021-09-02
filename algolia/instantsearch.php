@@ -13,28 +13,29 @@ get_header();
 
 ?>
 <style>
-    .ais-Pagination-list{
-        display:flex;
-        flex:wrap;
-        justify-content:center;
-    }
-    .ais-Pagination-item{
-        margin:0.25em;
-        padding:0.4em;
-        font-size:20px;
-        padding-left:0.5em;
-        padding-right:0.5em;
-        border:1px solid black;
-    }
-    .ais-Pagination-item--selected{
-        background-color:black;
-        color:white;
+    .ais-Pagination-list {
+        display: flex;
+        flex: wrap;
+        justify-content: center;
     }
 
+    .ais-Pagination-item {
+        margin: 0.25em;
+        padding: 0.4em;
+        font-size: 20px;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        border: 1px solid black;
+    }
+
+    .ais-Pagination-item--selected {
+        background-color: black;
+        color: white;
+    }
 </style>
 <div id="ais-wrapper">
-    <main id="ais-main"class="mx-auto" style="max-width:1200px">
-        <div class="algolia-search-box-wrapper" >
+    <main id="ais-main" class="mx-auto" style="max-width:1200px">
+        <div class="algolia-search-box-wrapper">
             <div id="algolia-search-box"></div>
             <svg class="search-icon" width="25" height="25" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -47,195 +48,194 @@ get_header();
         <div id="algolia-hits"></div>
         <div id="algolia-pagination"></div>
     </main>
-
 </div>
 
 <script type="text/html" id="tmpl-instantsearch-hit">
-<article itemtype="http://schema.org/Article">
-    <# if ( data.images.thumbnail ) { #>
-        <div class="ais-hits--thumbnail">
-            <a href="{{ data.permalink  }}" title="{{ data.post_title  }}" class="ais-hits--thumbnail-link">
-                <img src="{{ data.images.thumbnail.url  }}" alt="{{ data.post_title  }}" title="{{ data.post_title  }}"
-                    itemprop="image" />
-            </a>
-        </div>
-        <# }else{ #>
+    <article itemtype="http://schema.org/Article">
+        <# if ( data.images.thumbnail ) { #>
             <div class="ais-hits--thumbnail">
                 <a href="{{ data.permalink  }}" title="{{ data.post_title  }}" class="ais-hits--thumbnail-link">
-                    <div
-                        style="width:150px;height:150px;display:flex;justify-content:center;align-items:center;border-radius: 3px;background-color:gray;">
-                        <p style="color:white">画像がありません</p>
-                    </div>
+                    <img src="{{ data.images.thumbnail.url  }}" alt="{{ data.post_title  }}" title="{{ data.post_title  }}"
+                        itemprop="image" />
                 </a>
             </div>
-            <# } #>
-
-                <div class="ais-hits--content">
-                    <h2 itemprop="name headline"><a href="{{ data.permalink  }}" title="{{ data.post_title  }}"
-                            class="ais-hits--title-link"
-                            itemprop="url">{{{ data._highlightResult.post_title.value  }}}</a>
-                    </h2>
-                    <div class="excerpt">
-                        <p>
-                            <# if ( data._snippetResult['content'] ) { #>
-                                <span
-                                    class="suggestion-post-content ais-hits--content-snippet">{{{ data._snippetResult['content'].value  }}}</span>
-                                <# } #>
-                        </p>
-                    </div>
+            <# }else{ #>
+                <div class="ais-hits--thumbnail">
+                    <a href="{{ data.permalink  }}" title="{{ data.post_title  }}" class="ais-hits--thumbnail-link">
+                        <div
+                            style="width:150px;height:150px;display:flex;justify-content:center;align-items:center;border-radius: 3px;background-color:gray;">
+                            <p style="color:white">画像がありません</p>
+                        </div>
+                    </a>
                 </div>
-                <div class="ais-clearfix"></div>
-</article>
+                <# } #>
+
+                    <div class="ais-hits--content">
+                        <h2 itemprop="name headline"><a href="{{ data.permalink  }}" title="{{ data.post_title  }}"
+                                class="ais-hits--title-link"
+                                itemprop="url">{{ { data._highlightResult.post_title.value  }}}</a>
+                        </h2>
+                        <div class="excerpt">
+                            <p>
+                                <# if ( data._snippetResult['content'] ) { #>
+                                    <span
+                                        class="suggestion-post-content ais-hits--content-snippet">{{ { data._snippetResult['content'].value  }}}</span>
+                                    <# } #>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="ais-clearfix"></div>
+    </article>
 </script>
 
 
 <script type="text/javascript">
-jQuery(function() {
-    if (jQuery('#algolia-search-box').length > 0) {
+    jQuery(function () {
+        if (jQuery('#algolia-search-box').length > 0) {
 
-        if (algolia.indices.searchable_posts === undefined && jQuery('.admin-bar').length > 0) {
-            alert(
-                'It looks like you haven\'t indexed the searchable posts index. Please head to the Indexing page of the Algolia Search plugin and index it.'
-            );
-        }
-
-        /* Instantiate instantsearch.js */
-        var search = instantsearch({
-            indexName: algolia.indices.searchable_posts.name,
-            searchClient: algoliasearch(algolia.application_id, algolia.search_api_key),
-            routing: {
-                router: instantsearch.routers.history({
-                    writeDelay: 1000
-                }),
-                stateMapping: {
-                    stateToRoute(indexUiState) {
-                        return {
-                            s: indexUiState[algolia.indices.searchable_posts.name].query,
-                            page: indexUiState[algolia.indices.searchable_posts.name].page
-                        }
-                    },
-                    routeToState(routeState) {
-                        const indexUiState = {};
-                        indexUiState[algolia.indices.searchable_posts.name] = {
-                            query: routeState.s,
-                            page: routeState.page
-                        };
-                        return indexUiState;
-                    }
-                }
+            if (algolia.indices.searchable_posts === undefined && jQuery('.admin-bar').length > 0) {
+                alert(
+                    'It looks like you haven\'t indexed the searchable posts index. Please head to the Indexing page of the Algolia Search plugin and index it.'
+                );
             }
-        });
 
-        search.addWidgets([
-
-            /* Search box widget */
-            instantsearch.widgets.searchBox({
-                container: '#algolia-search-box',
-                placeholder: '全文検索',
-                showReset: false,
-                showSubmit: false,
-                showLoadingIndicator: false,
-                searchAsYouType: false,
-            }),
-
-            /* Stats widget */
-            instantsearch.widgets.stats({
-                container: '#algolia-stats',
-                templates: {
-                    text: `
-         {{nbHits}}件の記事が見つかりました。 ({{processingTimeMS}}ms)
-                    `,
-                },
-            }),
-
-            /* Hits widget */
-            instantsearch.widgets.hits({
-                container: '#algolia-hits',
-                hitsPerPage: 10,
-                templates: {
-                    empty: '"<strong>{{ query }}</strong>"に関する記事は見つかりませんでした！',
-                    item: wp.template('instantsearch-hit')
-                },
-                transformData: {
-                    item: function(hit) {
-
-                        function replace_highlights_recursive(item) {
-                            if (item instanceof Object && item.hasOwnProperty('value')) {
-                                item.value = _.escape(item.value);
-                                item.value = item.value.replace(/__ais-highlight__/g,
-                                        '<em>')
-                                    .replace(/__\/ais-highlight__/g, '</em>');
-                            } else {
-                                for (var key in item) {
-                                    item[key] = replace_highlights_recursive(item[key]);
-                                }
+            /* Instantiate instantsearch.js */
+            var search = instantsearch({
+                indexName: algolia.indices.searchable_posts.name,
+                searchClient: algoliasearch(algolia.application_id, algolia.search_api_key),
+                routing: {
+                    router: instantsearch.routers.history({
+                        writeDelay: 1000
+                    }),
+                    stateMapping: {
+                        stateToRoute(indexUiState) {
+                            return {
+                                s: indexUiState[algolia.indices.searchable_posts.name].query,
+                                page: indexUiState[algolia.indices.searchable_posts.name].page
                             }
-                            return item;
+                        },
+                        routeToState(routeState) {
+                            const indexUiState = {};
+                            indexUiState[algolia.indices.searchable_posts.name] = {
+                                query: routeState.s,
+                                page: routeState.page
+                            };
+                            return indexUiState;
                         }
-
-                        hit._highlightResult = replace_highlights_recursive(hit
-                            ._highlightResult);
-                        hit._snippetResult = replace_highlights_recursive(hit
-                            ._snippetResult);
-
-                        return hit;
                     }
                 }
-            }),
+            });
 
-            /* Pagination widget */
-            instantsearch.widgets.pagination({
-                container: '#algolia-pagination'
-            }),
+            search.addWidgets([
 
-            /* Post types refinement widget */
-            // instantsearch.widgets.menu({
-            //     container: '#facet-post-types',
-            //     attribute: 'post_type_label',
-            //     sortBy: ['isRefined:desc', 'count:desc', 'name:asc'],
-            //     limit: 10,
-            // }),
+                /* Search box widget */
+                instantsearch.widgets.searchBox({
+                    container: '#algolia-search-box',
+                    placeholder: '全文検索',
+                    showReset: false,
+                    showSubmit: false,
+                    showLoadingIndicator: false,
+                    searchAsYouType: false,
+                }),
 
-            /* Categories refinement widget */
-            // instantsearch.widgets.hierarchicalMenu({
-            //     container: '#facet-categories',
-            //     separator: ' > ',
-            //     sortBy: ['count'],
-            //     attributes: ['taxonomies_hierarchical.category.lvl0',
-            //         'taxonomies_hierarchical.category.lvl1',
-            //         'taxonomies_hierarchical.category.lvl2'
-            //     ],
-            // }),
+                /* Stats widget */
+                instantsearch.widgets.stats({
+                    container: '#algolia-stats',
+                    templates: {
+                        text: `
+         {{ nbHits }}件の記事が見つかりました。 ({{ processingTimeMS }}ms)
+                    `,
+                    },
+                }),
 
-            /* Tags refinement widget */
-            // instantsearch.widgets.refinementList({
-            //     container: '#facet-tags',
-            //     attribute: 'taxonomies.post_tag',
-            //     operator: 'and',
-            //     limit: 15,
-            //     sortBy: ['isRefined:desc', 'count:desc', 'name:asc'],
-            // }),
+                /* Hits widget */
+                instantsearch.widgets.hits({
+                    container: '#algolia-hits',
+                    hitsPerPage: 10,
+                    templates: {
+                        empty: '"<strong>{{ query }}</strong>"に関する記事は見つかりませんでした！',
+                        item: wp.template('instantsearch-hit')
+                    },
+                    transformData: {
+                        item: function (hit) {
 
-            /* Users refinement widget */
-            // instantsearch.widgets.menu({
-            //     container: '#facet-users',
-            //     attribute: 'post_author.display_name',
-            //     sortBy: ['isRefined:desc', 'count:desc', 'name:asc'],
-            //     limit: 10,
-            // }),
+                            function replace_highlights_recursive(item) {
+                                if (item instanceof Object && item.hasOwnProperty('value')) {
+                                    item.value = _.escape(item.value);
+                                    item.value = item.value.replace(/__ais-highlight__/g,
+                                            '<em>')
+                                        .replace(/__\/ais-highlight__/g, '</em>');
+                                } else {
+                                    for (var key in item) {
+                                        item[key] = replace_highlights_recursive(item[key]);
+                                    }
+                                }
+                                return item;
+                            }
 
-            /* Search powered-by widget */
-            instantsearch.widgets.poweredBy({
-                container: '#algolia-powered-by'
-            })
-        ]);
+                            hit._highlightResult = replace_highlights_recursive(hit
+                                ._highlightResult);
+                            hit._snippetResult = replace_highlights_recursive(hit
+                                ._snippetResult);
 
-        /* Start */
-        search.start();
+                            return hit;
+                        }
+                    }
+                }),
 
-        jQuery('#algolia-search-box input').attr('type', 'search').trigger('select');
-    }
-});
+                /* Pagination widget */
+                instantsearch.widgets.pagination({
+                    container: '#algolia-pagination'
+                }),
+
+                /* Post types refinement widget */
+                // instantsearch.widgets.menu({
+                //     container: '#facet-post-types',
+                //     attribute: 'post_type_label',
+                //     sortBy: ['isRefined:desc', 'count:desc', 'name:asc'],
+                //     limit: 10,
+                // }),
+
+                /* Categories refinement widget */
+                // instantsearch.widgets.hierarchicalMenu({
+                //     container: '#facet-categories',
+                //     separator: ' > ',
+                //     sortBy: ['count'],
+                //     attributes: ['taxonomies_hierarchical.category.lvl0',
+                //         'taxonomies_hierarchical.category.lvl1',
+                //         'taxonomies_hierarchical.category.lvl2'
+                //     ],
+                // }),
+
+                /* Tags refinement widget */
+                // instantsearch.widgets.refinementList({
+                //     container: '#facet-tags',
+                //     attribute: 'taxonomies.post_tag',
+                //     operator: 'and',
+                //     limit: 15,
+                //     sortBy: ['isRefined:desc', 'count:desc', 'name:asc'],
+                // }),
+
+                /* Users refinement widget */
+                // instantsearch.widgets.menu({
+                //     container: '#facet-users',
+                //     attribute: 'post_author.display_name',
+                //     sortBy: ['isRefined:desc', 'count:desc', 'name:asc'],
+                //     limit: 10,
+                // }),
+
+                /* Search powered-by widget */
+                instantsearch.widgets.poweredBy({
+                    container: '#algolia-powered-by'
+                })
+            ]);
+
+            /* Start */
+            search.start();
+
+            jQuery('#algolia-search-box input').attr('type', 'search').trigger('select');
+        }
+    });
 </script>
 
 <?php
