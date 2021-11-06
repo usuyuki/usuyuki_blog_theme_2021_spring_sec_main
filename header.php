@@ -52,12 +52,12 @@
                         class="fas fa-home"></i><br>ホーム</a>
 
             </div>
-            <h1 class="site_title md:w-1/3 hidden md:block">
+            <h1 class="site_title w-1/3 hidden md:block">
                 <a href="<?php echo get_home_url();?>"> <img src="<?php
 echo get_template_directory_uri();
 ?>/img/usuyukilogo2021spring.png" alt="うすゆきブログ" class="mx-auto py-2" style="height:60px"></a>
             </h1>
-            <div class="w-1/3 flex md:justify-end justify-center items-center">
+            <div class="md:w-1/3 flex md:justify-end justify-center items-center">
                 <?php get_search_form(); ?>
             </div>
 
