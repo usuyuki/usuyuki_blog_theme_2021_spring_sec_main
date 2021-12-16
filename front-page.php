@@ -2,7 +2,7 @@
 <div class="h-auto pb-16" style="background-image:url('<?php
 echo get_template_directory_uri();
 ?>/img/index_main.jpg');background-repeat: no-repeat;background-size: cover;background-position: center;">
-    <h1 class="text-center pt-12 text-5xl text-center font-bold h-auto norepeact">
+    <h1 class="text-center pt-12 text-3xl md:text-5xl text-center font-bold h-auto norepeact">
         <span class="char1">う</span>
         <span class="char2">す</span>
         <span class="char3">ゆ</span>
