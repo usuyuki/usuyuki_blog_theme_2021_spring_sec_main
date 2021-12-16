@@ -5,10 +5,10 @@
     <h1 class="text-center text-3xl two-square kiwi-maru h2-bou inline "><?php echo single_term_title('', false);?>
     </h1>
 </div>
-<?php if(tag_description()):?>
+<?php if(category_description()):?>
 <div class="entry-header flex justify-center items-center  mt-4 mb-16">
     <p class="text-xl">
-        <?php echo tag_description(); ?>
+        <?php echo category_description(); ?>
     </p>
 </div>
 <?php endif;?>
