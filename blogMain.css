@@ -73,17 +73,12 @@ figcaption {
   padding: 0.5em 12px 12px;
   border-left: 4px solid black;
 }
-/* 段落ごとの感覚 */
+/* 段落ごとの間隔 */
 .entry-content p {
   font-size: 18px;
   margin: 1em auto;
 }
-.entry-content h2 {
-  font-weight: bold;
-  font-size: 1.7em;
-  border-bottom: 2px solid black;
-  margin: 24px 0;
-}
+
 /* リスト */
 .entry-content ul {
   /* list-style: none; */
@@ -106,6 +101,24 @@ figcaption {
 .entry-content ol {
   list-style-type: decimal;
 }
+/* 大見出し */
+.entry-content h1 {
+  font-weight: bold;
+  font-size: 2em;
+  border-top: 4px solid black;
+  border-bottom: 4px solid black;
+  margin: 24px 0;
+  padding: 0.25em;
+}
+
+.entry-content h2 {
+  font-weight: bold;
+  font-size: 1.7em;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  margin: 24px 0;
+  padding: 0.25em;
+}
 .entry-content h3 {
   font-weight: bold;
   font-size: 1.4em;
@@ -114,16 +127,16 @@ figcaption {
 }
 .entry-content h4 {
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.1em;
   border-bottom: 1px dotted black;
   margin: 24px 0;
 }
-.entry-content h3::before {
+/* .entry-content h3::before {
   content: "-";
 }
 .entry-content h4:not(.text-lg)::before {
   content: "--";
-}
+} */
 /* 基本 */
 p {
   word-break: break-all; /* 要素のはみ出し防止 */
