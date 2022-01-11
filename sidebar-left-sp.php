@@ -5,7 +5,7 @@
         <label for="toc-x">
             <div class="toc-open-button">
                 <i class="fas fa-external-link-square-alt"></i>
-                <p class="h7">もくじ</p>
+                <p class="kiwi-maru ">もくじ</p>
             </div>
             <div class="toc-close-button">
                 <i class="fas fa-times"></i>
