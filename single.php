@@ -31,7 +31,13 @@ Template Post Type: post
                     </h1>
                     <!--投稿日-->
                     <p class="text-right text-white mr-4">
-                        <?php echo mysql2date('Y年n月j日', $post->post_date); ?>
+                        <span class="ml-2">
+                            <i
+                                class="fas fa-history mr-2"></i><?php echo mysql2date('Y年n月j日', $post->post_modified ); ?>
+                        </span>
+                        <span class="ml-2">
+                            <i class="far fa-clock mr-2"></i><?php echo mysql2date('Y年n月j日', $post->post_date); ?>
+                        </span>
                     </p>
                     <!--投稿カテゴリ-->
                     <div class="my-4 text-center">

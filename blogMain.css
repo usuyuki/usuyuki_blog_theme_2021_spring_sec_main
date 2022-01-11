@@ -553,7 +553,7 @@ h1 span {
   transition: 0.8s;
 }
 .toc-opener input:checked + label .toc-open-button {
-  left: -100px;
+  bottom: -70px;
   transition: 0.8s;
 }
 .toc-opener input:checked + label .toc-close-button {
