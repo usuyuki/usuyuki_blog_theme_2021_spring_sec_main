@@ -492,7 +492,7 @@ h1 span {
   justify-content: flex-start;
   z-index: 2;
   /* ↓下の要素をクリッカブルにするため */
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 .toc-card-wrapper label {
   cursor: pointer !important;
@@ -562,7 +562,7 @@ h1 span {
   height: 40px;
   position: absolute;
   top: 10px;
-  left: 40px;
+  left: 0px;
   z-index: 4;
   transition: 0.8s;
   background-color: #9ae6b4;
@@ -578,10 +578,30 @@ h1 span {
 }
 .toc-opener input:checked ~ .toc-content {
   width: 100vw;
-  height: 100%;
+  height: 60vh;
   /* 目次長いときに上にはみ出すの防止 */
   max-height: 100vh;
+
   transition: 0.8s;
+  padding-bottom: 10px;
+}
+.footer_widget {
+  /* 大きさ指定しないとscrollできない */
+  height: 50vh;
+  overflow-y: scroll;
+}
+
+.toc-card {
+  margin: 30px 20px;
+  padding: 14px;
+  border: 2px solid #9ae6b4;
+  border-radius: 10px;
+}
+.toc-card li {
+  padding-top: 1em;
+  padding-right: 1em;
+}
+.toc_widget_list {
   padding-bottom: 10px;
 }
 
@@ -590,3 +610,17 @@ h1 span {
 目次用 ここまで
 -----
 */
+
+/* スクロールバー */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #9ae6b4;
+  border-radius: 5px;
+}

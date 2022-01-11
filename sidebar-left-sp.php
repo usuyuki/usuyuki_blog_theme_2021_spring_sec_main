@@ -12,7 +12,7 @@
             </div>
         </label>
         <div class="toc-content">
-            <div class="toc-card mt-4 border border-green-300 rounded-2xl p-12 sticky top-0 mx-12 ">
+            <div class="toc-card ">
                 <?php dynamic_sidebar( 'side-table-of-content' ); ?>
             </div>
         </div>
