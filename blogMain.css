@@ -79,6 +79,13 @@ figcaption {
   margin: 1em auto;
 }
 
+/* 埋め込みリンクを中央揃えにする */
+.wp-embedded-content {
+  margin: 0 auto;
+}
+.wp-block-embed__wrapper iframe {
+  margin: 0 auto;
+}
 /* リスト */
 .entry-content ul {
   /* list-style: none; */
