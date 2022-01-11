@@ -55,7 +55,7 @@ Template Post Type: post
     </div>
     <div class="md:block hidden">
 
-        <?php get_sidebar(); ?>
+        <?php get_sidebar('right'); ?>
     </div>
 </div>
 <?php get_footer(); ?>
