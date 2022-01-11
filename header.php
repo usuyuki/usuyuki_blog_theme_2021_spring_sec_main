@@ -10,7 +10,7 @@
     <!--ファビコンやブックマークアイコンの指定-->
     <link rel="SHORTCUT ICON" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />
     <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon.png" />
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/blogMain.css?ver=10.1" />
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/blogMain.css?ver=10.2" />
     <meta name="thumbnail" content="<?php echo get_template_directory_uri(); ?>/metathum.jpg" />
 
 

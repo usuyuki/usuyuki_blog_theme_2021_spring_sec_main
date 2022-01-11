@@ -55,7 +55,7 @@ echo get_template_directory_uri();
             </div>
             <div class="mt-4 mx-auto ">
                 <h4 class="font-bold text-xl"><i class="fab fa-quinscape"></i>なにがしたいの？</h4>
-                <p class="kiwi-maru">自分でもわかりません。</p>
+                <p class="kiwi-maru">自分でもわかりません。収益化の予定もありません。</p>
             </div>
             <div class="mt-4 mx-auto ">
                 <h4 class="font-bold text-xl"><i class="fab fa-quinscape"></i>だれ？</h4>

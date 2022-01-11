@@ -6,10 +6,15 @@ Template Post Type: post
 ?>
 <?php get_header(); ?>
 <div class="md:grid grid-cols-8 w-full">
-    <div class="col-span-2 md:block hidden">
-        <!-- sidebar -->
-        <aside id="" class="mt-4 border border-green-300 rounded-2xl p-12 sticky top-0 mx-12 ">
-            <?php dynamic_sidebar( 'side-table-of-content' ); ?></aside>
+    <div class="col-span-2 ">
+        <?php
+        if(wp_is_mobile()){
+            get_sidebar('left-sp');
+
+        }else{
+            get_sidebar('left');
+        }
+        ?>
     </div>
     <div id="template-single" class="col-span-4 md:mx-0 mx-4 ">
 
@@ -58,7 +63,7 @@ Template Post Type: post
     </div>
     <div class="col-span-2 md:block hidden">
 
-        <?php get_sidebar(); ?>
+        <?php get_sidebar('right'); ?>
     </div>
 
 </div>
