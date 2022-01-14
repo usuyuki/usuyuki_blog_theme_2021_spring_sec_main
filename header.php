@@ -10,7 +10,7 @@
     <!--ファビコンやブックマークアイコンの指定-->
     <link rel="SHORTCUT ICON" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />
     <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon.png" />
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/blogMain.css?ver=10.2" />
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/blogMain.css?ver=10.3" />
     <meta name="thumbnail" content="<?php echo get_template_directory_uri(); ?>/metathum.jpg" />
 
 
@@ -21,7 +21,7 @@
 
 
     <!-- Font Awesome読み込み -->
-    <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
 
     <!--Google Analyticsここから-->
     <!-- うすゆきブログトラッキングコード -->

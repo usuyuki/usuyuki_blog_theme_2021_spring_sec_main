@@ -25,7 +25,7 @@ register_sidebar(array(
 	 'id' => 'sidenavi' ,
 	 'before_widget' => '<div class="side_widget">',
 	 'after_widget' => '</div>',
-	 'before_title' => '<h2 class="side_widget_title">',
+	 'before_title' => '<h2 class="side-widget-title">',
 	 'after_title' => '</h2>'
 ));
 register_sidebar(array(

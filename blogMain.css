@@ -530,10 +530,6 @@ h1 span {
 
 .toc-open-button {
   cursor: pointer;
-  /* 縦書き */
-  /* -ms-writing-mode: tb-rl;
-  writing-mode: vertical-rl; */
-  /* 縦書きで左右中心 */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -613,6 +609,24 @@ h1 span {
 -----
 */
 
+.page-scroll-button {
+  position: fixed;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  opacity: 0.9;
+  color: white;
+  width: 90px;
+  height: 40px;
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+  transition: 0.8s;
+}
+
 /* スクロールバー */
 ::-webkit-scrollbar {
   width: 10px;
@@ -625,4 +639,40 @@ h1 span {
 ::-webkit-scrollbar-thumb {
   background-color: #9ae6b4;
   border-radius: 5px;
+}
+
+.side-widget-title {
+  margin-top: 2em;
+  font-size: 1.3em;
+}
+/* リスト形式の修正 */
+
+.side-monthly-list li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-top: 1em;
+  line-height: 1em;
+}
+.side-monthly-list li:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f272";
+  position: absolute;
+  color: #e0c60b;
+  font-size: 1em;
+  left: 0;
+}
+
+.side-category-list li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-top: 1em;
+  line-height: 1em;
+}
+.side-category-list li:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f2d2";
+  position: absolute;
+  color: #e0c60b;
+  font-size: 1em;
+  left: 0;
 }
