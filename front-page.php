@@ -184,6 +184,22 @@ echo get_template_directory_uri();
 </div>
 <div>
     <div class="flex justify-center">
+        <h3 class="text-center text-3xl two-square kiwi-maru h2-bou inline mt-20">昔の記事について</h3>
+    </div>
+    <p class="text-center mx-2 my-4">主に本サイト開設前や軽い内容はnoteに。高校時代の内容はアメーバブログに掲載しています。</p>
+    <div class="flex justify-center">
+        <div class="mx-2">
+            <a target="_blank" rel="noopener" class="mx-4" href="https://note.com/usuyuki26/">
+                <img src="<?php
+echo get_template_directory_uri();
+?>/img/logo/note-logo.png" alt="note" class=" object-fill  h-auto" style="width:300px">
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+<div>
+    <div class="flex justify-center">
         <h3 class="text-center text-3xl two-square kiwi-maru h2-bou inline mt-20">制作物について</h3>
     </div>
     <p class="text-center mx-2 my-4">制作物はブログではなく、ポートフォリオに投稿しています！</p>
