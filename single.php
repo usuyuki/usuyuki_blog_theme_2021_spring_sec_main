@@ -12,7 +12,7 @@ Template Post Type: post
             get_sidebar('left-sp');
 
         }else{
-            get_sidebar('left');
+            get_sidebar('left-pc');
         }
         ?>
     </div>
@@ -67,9 +67,15 @@ Template Post Type: post
             } ?>
         </div>
     </div>
-    <div class="col-span-2 md:block hidden">
+    <div class="col-span-2 ">
+        <?php
+        if(wp_is_mobile()){
+            get_sidebar('right-sp');
 
-        <?php get_sidebar('right'); ?>
+        }else{
+            get_sidebar('right-pc');
+        }
+        ?>
     </div>
 
 </div>

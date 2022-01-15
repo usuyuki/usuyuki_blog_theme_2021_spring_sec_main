@@ -39,9 +39,9 @@ register_sidebar(array(
 register_sidebar(array(
 	 'name' => 'サイド目次',
 	 'id' => 'side-table-of-content' ,
-	 'before_widget' => '<div class="footer_widget">',
+	 'before_widget' => '<div class="side-menu">',
 	 'after_widget' => '</div>',
-	 'before_title' => '<h2 class="footer_widget_title">',
+	 'before_title' => '<h2 class="side-toc-title">',
 	 'after_title' => '</h2>'
 ));
 }

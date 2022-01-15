@@ -4,7 +4,7 @@
         <input type="checkbox" id="toc-x">
         <label for="toc-x">
             <div class="toc-open-button">
-                <i class="fas fa-external-link-square-alt"></i>
+                <i class="far fa-caret-square-down"></i>
                 <p class="kiwi-maru ">もくじ</p>
             </div>
             <div class="toc-close-button">
@@ -13,7 +13,7 @@
         </label>
         <div class="toc-content">
             <div class="toc-card ">
-                <?php dynamic_sidebar( 'side-table-of-content' ); ?>
+                <?php   get_sidebar('left-core'); ?>
             </div>
         </div>
     </div>
