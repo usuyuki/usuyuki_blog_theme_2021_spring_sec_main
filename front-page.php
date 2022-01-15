@@ -35,7 +35,7 @@ echo get_template_directory_uri();
         <a target="_blank" rel="noopener" class="mx-4" href="https://www.youtube.com/channel/UCI4-1pvH-0XdwfKZe4WBPhQ">
             <i class="fab fa-2x fa-youtube"></i>
         </a>
-        <a target="_blank" rel="noopener" class="mx-4" href="https://portfolio.usuyuki.net/">
+        <a target="_blank" rel="noopener" class="mx-4" href="https://pf.usuyuki.net/">
             <img src="<?php
 echo get_template_directory_uri();
 ?>/img/logo/portfolio_favicon.png" alt="ポートフォリオ" class=" object-fill h-12 w-12 rounded-full">
@@ -55,7 +55,7 @@ echo get_template_directory_uri();
             </div>
             <div class="mt-4 mx-auto ">
                 <h4 class="font-bold text-xl"><i class="fab fa-quinscape"></i>なにがしたいの？</h4>
-                <p class="kiwi-maru">自分でもわかりません。収益化の予定もありません。</p>
+                <p class="kiwi-maru">自分でもわかりません。広告導入の予定もありません。つまりただの趣味です。</p>
             </div>
             <div class="mt-4 mx-auto ">
                 <h4 class="font-bold text-xl"><i class="fab fa-quinscape"></i>だれ？</h4>

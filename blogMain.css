@@ -745,12 +745,6 @@ rightサイドバーここまで
   height: 100vh;
   overflow-y: scroll;
 }
-@media screen and (max-width: 640px) {
-  .side-menu {
-    /* 大きさ指定しないとscrollできない */
-    height: 50vh;
-  }
-}
 
 .side-toc-title {
   font-size: 1.2em;
@@ -760,8 +754,8 @@ rightサイドバーここまで
 
 /* スクロールバー */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0);
@@ -782,6 +776,12 @@ rightサイドバーここまで
 }
 /* リスト形式の修正 */
 
+.side-monthly-list,
+.side-category-list {
+  margin: 0.5em 0;
+  height: 9em;
+  overflow-y: scroll;
+}
 .side-monthly-list li {
   position: relative;
   padding-left: 1.6rem;
@@ -810,4 +810,17 @@ rightサイドバーここまで
   color: #e0c60b;
   font-size: 1em;
   left: 0;
+}
+
+@media screen and (max-width: 640px) {
+  /* スマホ */
+  .side-menu {
+    /* 大きさ指定しないとscrollできない */
+    height: 50vh;
+  }
+  .side-monthly-list,
+  .side-category-list {
+    height: auto;
+    overflow-y: initial;
+  }
 }

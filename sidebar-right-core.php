@@ -48,7 +48,7 @@ $side_categories=[
         <div class="grid grid-cols-2 h-auto my-4">
             <div>
                 <img src="https://pbs.twimg.com/profile_images/1314755394569297920/VnBJHt-o_400x400.jpg" alt="うすゆき"
-                    class=" object-fill mx-auto  h-26 w-26 rounded-2xl ">
+                    class=" object-fill mx-auto  h-24 w-24 rounded-2xl ">
             </div>
             <div class="mx-2 flex items-center">
                 <p>宇都宮大学工学部2年。珈琲が好きです。
