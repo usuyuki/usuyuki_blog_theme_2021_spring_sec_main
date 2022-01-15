@@ -47,7 +47,7 @@ echo get_template_directory_uri();
         <div class="my-12  pt-8 pb-12 px-12 top-blog-exp">
             <div class=" border-b-2 border-black h-auto">
 
-                <h3 class="text-center text-3xl pb-2 kiwi-maru font-bold">このブログについて！</h3>
+                <h3 class="text-center text-3xl pb-2 kiwi-maru font-bold">このブログに<br class="md:hidden">ついて！</h3>
             </div>
             <div class="mt-4 mx-auto ">
                 <h4 class="font-bold text-xl"><i class="fab fa-quinscape"></i>なんのブログ？</h4>
@@ -189,7 +189,7 @@ echo get_template_directory_uri();
     <p class="text-center mx-2 my-4">制作物はブログではなく、ポートフォリオに投稿しています！</p>
     <div class="flex justify-center">
         <div class="mx-2">
-            <a target="_blank" rel="noopener" class="mx-4" href="https://usuyuki.net">
+            <a target="_blank" rel="noopener" class="mx-4" href="https://pf.usuyuki.net">
                 <img src="<?php
 echo get_template_directory_uri();
 ?>/img/logo/portfolio_title20201027.png" alt="ポートフォリオ" class=" object-fill  h-auto" style="width:300px">

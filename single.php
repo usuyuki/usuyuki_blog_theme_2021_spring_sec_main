@@ -12,7 +12,7 @@ Template Post Type: post
             get_sidebar('left-sp');
 
         }else{
-            get_sidebar('left');
+            get_sidebar('left-pc');
         }
         ?>
     </div>
@@ -31,7 +31,13 @@ Template Post Type: post
                     </h1>
                     <!--投稿日-->
                     <p class="text-right text-white mr-4">
-                        <?php echo mysql2date('Y年n月j日', $post->post_date); ?>
+                        <span class="ml-2">
+                            <i
+                                class="fas fa-history mr-2"></i><?php echo mysql2date('Y年n月j日', $post->post_modified ); ?>
+                        </span>
+                        <span class="ml-2">
+                            <i class="far fa-clock mr-2"></i><?php echo mysql2date('Y年n月j日', $post->post_date); ?>
+                        </span>
                     </p>
                     <!--投稿カテゴリ-->
                     <div class="my-4 text-center">
@@ -61,9 +67,15 @@ Template Post Type: post
             } ?>
         </div>
     </div>
-    <div class="col-span-2 md:block hidden">
+    <div class="col-span-2 ">
+        <?php
+        if(wp_is_mobile()){
+            get_sidebar('right-sp');
 
-        <?php get_sidebar('right'); ?>
+        }else{
+            get_sidebar('right-pc');
+        }
+        ?>
     </div>
 
 </div>

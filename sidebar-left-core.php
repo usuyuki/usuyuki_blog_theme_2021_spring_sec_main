@@ -1,0 +1,1 @@
+<?php dynamic_sidebar( 'side-table-of-content' ); ?>

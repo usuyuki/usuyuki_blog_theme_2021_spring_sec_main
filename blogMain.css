@@ -86,6 +86,9 @@ figcaption {
 .wp-block-embed__wrapper iframe {
   margin: 0 auto;
 }
+/* .wp-block-embed iframe {
+  width: 100%;
+} */
 /* リスト */
 .entry-content ul {
   /* list-style: none; */
@@ -530,10 +533,6 @@ h1 span {
 
 .toc-open-button {
   cursor: pointer;
-  /* 縦書き */
-  /* -ms-writing-mode: tb-rl;
-  writing-mode: vertical-rl; */
-  /* 縦書きで左右中心 */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -553,7 +552,7 @@ h1 span {
   transition: 0.8s;
 }
 .toc-opener input:checked + label .toc-open-button {
-  left: -100px;
+  bottom: -70px;
   transition: 0.8s;
 }
 .toc-opener input:checked + label .toc-close-button {
@@ -613,6 +612,152 @@ h1 span {
 -----
 */
 
+/*
+-----
+rightサイドバー ここから
+-----
+*/
+.right-sidebar-card-wrapper {
+  /* ↓スクロール時ふんわり出現する設定を予め適応しなようにするためのopacity上書き */
+  opacity: 100 !important;
+  /*position: -webkit-sticky; /* Safari */
+  position: fixed;
+  bottom: 0px; /* 位置指定 */
+
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  /* ↓下の要素をクリッカブルにするため */
+  /* pointer-events: none; */
+}
+.right-sidebar-card-wrapper label {
+  cursor: pointer !important;
+  pointer-events: initial !important;
+}
+
+.right-sidebar-card {
+  margin-left: 6px;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 16%);
+  padding: 10px;
+  pointer-events: initial;
+  overflow-y: scroll;
+}
+
+.right-sidebar-remover {
+  position: relative;
+  top: 18px;
+  right: -30px;
+  z-index: 3;
+  padding-right: 20px;
+}
+
+/*全体*/
+.right-sidebar-opener {
+  margin-right: 2em; /*前後の余白*/
+  padding: 0;
+}
+
+/*閉じたときの見た目*/
+
+.right-sidebar-opener input {
+  display: none;
+}
+
+.right-sidebar-open-button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  opacity: 0.9;
+  color: white;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  right: 50px;
+  bottom: 0px;
+  transition: 0.8s;
+}
+.right-sidebar-close-button {
+  display: none;
+  transition: 0.8s;
+}
+.right-sidebar-opener input:checked + label .right-sidebar-open-button {
+  bottom: -70px;
+  transition: 0.8s;
+}
+.right-sidebar-opener input:checked + label .right-sidebar-close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 10px;
+  left: 3px;
+  z-index: 4;
+  transition: 0.8s;
+  background-color: #e0c60b;
+  border-radius: 50%;
+}
+
+.right-sidebar-opener .right-sidebar-content {
+  width: 100vw;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: 0.8s;
+}
+.right-sidebar-opener input:checked ~ .right-sidebar-content {
+  width: 100vw;
+  height: 60vh;
+  /* 目次長いときに上にはみ出すの防止 */
+  max-height: 100vh;
+
+  transition: 0.8s;
+  padding-bottom: 10px;
+}
+
+.right-sidebar-card {
+  margin: 30px 20px;
+  padding: 14px;
+  border: 2px solid #e0c60b;
+  border-radius: 10px;
+}
+.right-sidebar-card li {
+  padding-top: 1em;
+  padding-right: 1em;
+}
+.right-sidebar_widget_list {
+  padding-bottom: 10px;
+}
+
+/* 
+-----
+rightサイドバーここまで
+-----
+*/
+
+.side-menu {
+  /* 大きさ指定しないとscrollできない */
+  height: 100vh;
+  overflow-y: scroll;
+}
+@media screen and (max-width: 640px) {
+  .side-menu {
+    /* 大きさ指定しないとscrollできない */
+    height: 50vh;
+  }
+}
+
+.side-toc-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
 /* スクロールバー */
 ::-webkit-scrollbar {
   width: 10px;
@@ -622,7 +767,47 @@ h1 span {
   background: rgba(0, 0, 0, 0);
   border-radius: 10px;
 }
-::-webkit-scrollbar-thumb {
+.toc-card-wrapper ::-webkit-scrollbar-thumb {
   background-color: #9ae6b4;
   border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #e0c60b;
+  border-radius: 5px;
+}
+
+.side-widget-title {
+  margin-top: 2em;
+  font-size: 1.3em;
+}
+/* リスト形式の修正 */
+
+.side-monthly-list li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-top: 1em;
+  line-height: 1em;
+}
+.side-monthly-list li:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f272";
+  position: absolute;
+  color: #e0c60b;
+  font-size: 1em;
+  left: 0;
+}
+
+.side-category-list li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-top: 1em;
+  line-height: 1em;
+}
+.side-category-list li:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f2d2";
+  position: absolute;
+  color: #e0c60b;
+  font-size: 1em;
+  left: 0;
 }

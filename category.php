@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- タイトルの読み込み -->
-<div class="entry-header flex justify-center mt-16 mb-4">
+<div class="entry-header flex justify-center mt-16 mb-8">
     <h1 class="text-center text-3xl two-square kiwi-maru h2-bou inline "><?php echo single_term_title('', false);?>
     </h1>
 </div>
