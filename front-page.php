@@ -20,7 +20,7 @@ echo get_template_directory_uri();
         <div>
             <img src="<?php
 echo get_template_directory_uri();
-?>/img/logo/icon_small.jpg" alt="うすゆき" class=" object-fill h-24 w-24 rounded-full"
+?>/img/logo/うすゆきブログfavicon.png" alt="うすゆき" class=" object-fill h-24 w-24 rounded-full"
                 style="filter:drop-shadow(4px 4px 4px black)">
         </div>
 
@@ -181,6 +181,22 @@ echo get_template_directory_uri();
             </a>
         </div>
     </div>
+</div>
+<div>
+    <div class="flex justify-center">
+        <h3 class="text-center text-3xl two-square kiwi-maru h2-bou inline mt-20">昔の記事について</h3>
+    </div>
+    <p class="text-center mx-2 my-4">主に本サイト開設前や軽い内容はnoteに掲載しています。</p>
+    <div class="flex justify-center">
+        <div class="mx-2">
+            <a target="_blank" rel="noopener" class="mx-4" href="https://note.com/usuyuki26/">
+                <img src="<?php
+echo get_template_directory_uri();
+?>/img/logo/note-logo.png" alt="note" class=" object-fill  h-auto" style="width:300px">
+            </a>
+        </div>
+    </div>
+</div>
 </div>
 <div>
     <div class="flex justify-center">
