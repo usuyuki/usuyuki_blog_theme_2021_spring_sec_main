@@ -740,10 +740,23 @@ rightサイドバーここまで
 -----
 */
 
-.side-menu {
+.left-side-menu-pc {
+  margin-right: 2em;
+}
+.right-side-menu {
+  padding-right: 2em;
+}
+.left-side-menu,
+.left-side-menu-pc,
+.right-side-menu {
   /* 大きさ指定しないとscrollできない */
   height: 100vh;
   overflow-y: scroll;
+}
+.left-side-menu-pc .left-side-menu {
+  /* pcではサイズ改変にしたいのでスクロール要素を変える */
+  height: auto;
+  overflow-y: initial;
 }
 
 .side-toc-title {
@@ -814,7 +827,14 @@ rightサイドバーここまで
 
 @media screen and (max-width: 640px) {
   /* スマホ */
-  .side-menu {
+  .left-side-menu {
+    margin-right: 0;
+  }
+  .right-side-menu {
+    padding-right: 0;
+  }
+  .left-side-menu,
+  .right-side-menu {
     /* 大きさ指定しないとscrollできない */
     height: 50vh;
   }

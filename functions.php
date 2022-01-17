@@ -39,7 +39,7 @@ register_sidebar(array(
 register_sidebar(array(
 	 'name' => 'サイド目次',
 	 'id' => 'side-table-of-content' ,
-	 'before_widget' => '<div class="side-menu">',
+	 'before_widget' => '<div class="left-side-menu">',
 	 'after_widget' => '</div>',
 	 'before_title' => '<h2 class="side-toc-title">',
 	 'after_title' => '</h2>'

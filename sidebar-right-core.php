@@ -1,4 +1,4 @@
-<div class="side-menu">
+<div class="right-side-menu">
 
 
     <h2 class="side-widget-title kiwi-maru pt-2 mt-0 md:pt-12">メニュー</h2>
