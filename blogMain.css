@@ -740,23 +740,17 @@ rightサイドバーここまで
 -----
 */
 
-.left-side-menu-pc {
-  margin-right: 2em;
+.left-side-menu {
+  padding-right: 1em;
 }
 .right-side-menu {
   padding-right: 2em;
 }
 .left-side-menu,
-.left-side-menu-pc,
 .right-side-menu {
   /* 大きさ指定しないとscrollできない */
   height: 100vh;
   overflow-y: scroll;
-}
-.left-side-menu-pc .left-side-menu {
-  /* pcではサイズ改変にしたいのでスクロール要素を変える */
-  height: auto;
-  overflow-y: initial;
 }
 
 .side-toc-title {
@@ -773,6 +767,10 @@ rightサイドバーここまで
 ::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0);
   border-radius: 10px;
+}
+#leftSideBar ::-webkit-scrollbar-thumb {
+  background-color: #9ae6b4;
+  border-radius: 5px;
 }
 .toc-card-wrapper ::-webkit-scrollbar-thumb {
   background-color: #9ae6b4;
