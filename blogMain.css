@@ -788,7 +788,7 @@ rightサイドバーここまで
 }
 
 .side-widget-title {
-  margin-top: 2em;
+  margin-top: 1em;
   font-size: 1.3em;
 }
 /* リスト形式の修正 */
@@ -843,7 +843,7 @@ rightサイドバーここまで
   border: 2px dotted var(--blog-green-color) !important;
   border-radius: 10px;
   margin: 2em auto;
-  width: 50% !important;
+  width: 80% !important;
 }
 
 @media screen and (max-width: 640px) {
