@@ -1,5 +1,10 @@
 /** @format */
-
+:root {
+  /* カラー定義 */
+  --blog-yellow-color: #e0c60b;
+  --blog-green-color: #9ae6b4;
+  /* ボタン色の黄色はまた別……厄介すぎる…… */
+}
 html,
 body {
   scroll-behavior: smooth;
@@ -566,7 +571,7 @@ h1 span {
   left: 3px;
   z-index: 4;
   transition: 0.8s;
-  background-color: #9ae6b4;
+  background-color: var(--blog-green-color);
   border-radius: 50%;
 }
 
@@ -595,7 +600,7 @@ h1 span {
 .toc-card {
   margin: 30px 20px;
   padding: 14px;
-  border: 2px solid #9ae6b4;
+  border: 2px solid var(--blog-green-color);
   border-radius: 10px;
 }
 .toc-card li {
@@ -699,7 +704,7 @@ rightサイドバー ここから
   left: 3px;
   z-index: 4;
   transition: 0.8s;
-  background-color: #e0c60b;
+  background-color: var(--blog-yellow-color);
   border-radius: 50%;
 }
 
@@ -723,7 +728,7 @@ rightサイドバー ここから
 .right-sidebar-card {
   margin: 30px 20px;
   padding: 14px;
-  border: 2px solid #e0c60b;
+  border: 2px solid var(--blog-yellow-color);
   border-radius: 10px;
 }
 .right-sidebar-card li {
@@ -754,6 +759,7 @@ rightサイドバーここまで
 }
 
 .side-toc-title {
+  font-family: "Kiwi Maru", serif;
   font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 10px;
@@ -769,15 +775,15 @@ rightサイドバーここまで
   border-radius: 10px;
 }
 #leftSideBar ::-webkit-scrollbar-thumb {
-  background-color: #9ae6b4;
+  background-color: var(--blog-green-color);
   border-radius: 5px;
 }
 .toc-card-wrapper ::-webkit-scrollbar-thumb {
-  background-color: #9ae6b4;
+  background-color: var(--blog-green-color);
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #e0c60b;
+  background-color: var(--blog-yellow-color);
   border-radius: 5px;
 }
 
@@ -803,7 +809,7 @@ rightサイドバーここまで
   font-family: "Font Awesome 5 Free";
   content: "\f272";
   position: absolute;
-  color: #e0c60b;
+  color: var(--blog-yellow-color);
   font-size: 1em;
   left: 0;
 }
@@ -818,9 +824,26 @@ rightサイドバーここまで
   font-family: "Font Awesome 5 Free";
   content: "\f2d2";
   position: absolute;
-  color: #e0c60b;
+  color: var(--blog-yellow-color);
   font-size: 1em;
   left: 0;
+}
+
+/* 中央のtoc変更 */
+.toc_title {
+  font-family: "Kiwi Maru", serif;
+  font-size: 1.5em !important;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.toc_list li {
+  margin: 0.1em 1em !important;
+}
+#toc_container {
+  border: 2px dotted var(--blog-green-color) !important;
+  border-radius: 10px;
+  margin: 2em auto;
+  width: 50% !important;
 }
 
 @media screen and (max-width: 640px) {
@@ -840,5 +863,11 @@ rightサイドバーここまで
   .side-category-list {
     height: auto;
     overflow-y: initial;
+  }
+  #toc_container {
+    border: 2px dotted var(--blog-green-color) !important;
+    border-radius: 10px;
+    margin: 2em auto;
+    width: 100% !important;
   }
 }
