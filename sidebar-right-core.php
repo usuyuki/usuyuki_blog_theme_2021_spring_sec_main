@@ -1,15 +1,15 @@
 <div class="right-side-menu">
 
 
-    <h2 class="side-widget-title kiwi-maru pt-2 mt-0 md:pt-12">メニュー</h2>
+    <h2 class="side-widget-title kiwi-maru pt-2 mt-0 md:pt-4">メニュー</h2>
     <div class="flex justify-center flex-wrap">
-        <div class="my-2 ">
+        <div class="my-2 md:w-1/2">
             <a class="text-center p-4 kiwi-maru flex flex-wrap w-28 justify-center" href="#page_top">
                 <i class="fas w-28 fa-arrow-up"></i>
                 <span>ページ先頭へ</span>
             </a>
         </div>
-        <div class="my-2 ">
+        <div class="my-2 md:w-1/2">
             <a class="text-center p-4 kiwi-maru flex flex-wrap w-28 justify-center"
                 href="<?php echo home_url( '/' ) ?>">
                 <i class="fas w-28 fa-home"></i>
@@ -25,7 +25,6 @@ $side_categories=[
     ['programing','プログラミング'],
     ['travel','旅'],
     ['life','生活向上'],
-    ['souvenir','お土産'],
     ]
     ?>
     <ul class="side-category-list">
@@ -36,6 +35,7 @@ $side_categories=[
             </a>
         </li>
         <?php endforeach;?>
+        <p class="text-right mt-2">などなど………</p>
     </ul>
     <h2 class="side-widget-title kiwi-maru">月別</h2>
     <ul class="side-monthly-list">
