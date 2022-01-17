@@ -12,7 +12,7 @@
             </div>
         </label>
         <div class="toc-content">
-            <div class="toc-card ">
+            <div class="toc-card left-side-menu-sp">
                 <?php   get_sidebar('left-core'); ?>
             </div>
         </div>
