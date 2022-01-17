@@ -11,7 +11,7 @@
     <link rel="apple-touch-icon" type="image/png"
         href="<?php echo get_template_directory_uri(); ?>/favicon/apple-touch-icon-180x180.png">
     <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/favicon/icon-192x192.png">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/blogMain.css?ver=10.4" />
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/blogMain.css?ver=10.5" />
     <meta name="thumbnail" content="<?php echo get_template_directory_uri(); ?>/screenshot.jpg" />
 
 
