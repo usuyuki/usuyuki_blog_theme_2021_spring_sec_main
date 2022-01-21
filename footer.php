@@ -7,7 +7,7 @@
     <div id="footerwidget">
         <?php dynamic_sidebar('footerwidget'); ?>
     </div>
-    <a class="text-left p-4 bg-gray-600 text-white hover:text-black kiwi-maru" href="#page_top">ページ先頭へ<i
+    <a class="text-left p-4 bg-gray-600 text-blog-white hover:text-black kiwi-maru" href="#page_top">ページ先頭へ<i
             class="fas w-24 fa-arrow-up"></i></a>
     <div class="flex justify-center items-start my-4 mx-4 flex-wrap">
         <div class="my-2 mx-2">

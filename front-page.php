@@ -55,7 +55,9 @@ echo get_template_directory_uri();
             </div>
             <div class="mt-4 mx-auto ">
                 <h4 class="font-bold text-xl"><i class="fab fa-quinscape"></i>なにがしたいの？</h4>
-                <p class="kiwi-maru">自分でもわかりません。広告導入の予定もありません。つまりただの趣味です。</p>
+                <p class="kiwi-maru">
+                    理系の授業の殆どは証明や計算ばかりで意見や主観の介在余地なんてありません。だからこそ個人の主観入りまくりのものが作りたくてブログを書いています。<br>広告導入の予定もありません。つまりただの趣味です。
+                </p>
             </div>
             <div class="mt-4 mx-auto ">
                 <h4 class="font-bold text-xl"><i class="fab fa-quinscape"></i>だれ？</h4>
@@ -63,9 +65,31 @@ echo get_template_directory_uri();
             </div>
         </div>
     </div>
+    <div class="flex justify-center items-end mt-4">
+        <h2 class="pickup-heading kiwi-maru start-large">Pickup記事↓</h2>
 
-    <div>
+    </div>
 
+    <div class="flex justify-center wrap mt-8 flex-wrap">
+        <?php $args=array(
+                'posts_per_page' => -1,
+                'meta_query' => array(
+                    array(
+                        'key' => 'post_pickup', 
+                        'value' => true
+                    ),
+                ),
+            );
+            $customPost=get_posts($args);
+            if($customPost):
+                foreach($customPost as $post):
+            ?>
+
+        <?php
+            get_template_part( 'template/article/article_pickup_card' ); 
+        ?>
+        <?php endforeach;
+        endif; ?>
 
     </div>
 </div>
@@ -95,10 +119,10 @@ echo get_template_directory_uri();
 
         <?php
         if(wp_is_mobile()){
-            get_template_part( 'template/article/article_template_sp' ); 
+            get_template_part( 'template/article/article_card_sp' ); 
 
         }else{
-            get_template_part( 'template/article/article_template_pc' ); 
+            get_template_part( 'template/article/article_card_pc' ); 
         }
         ?>
         <?php endforeach;
@@ -144,10 +168,10 @@ $counter=0;
 
     <?php 
       if(wp_is_mobile()){
-        get_template_part( 'template/article/article_template_sp' ); 
+        get_template_part( 'template/article/article_card_sp' ); 
 
     }else{
-        get_template_part( 'template/article/article_template_pc' ); 
+        get_template_part( 'template/article/article_card_pc' ); 
     }
     ?>
     <?php endforeach;

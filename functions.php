@@ -99,7 +99,8 @@ remove_filter( 'pre_term_name', 'wp_filter_kses' );
 
 //the excertの設定
 function twpp_change_excerpt_more( $more ) {
-	$html = '<a href="' . esc_url( get_permalink() ) . '">[...続きを読む]</a>';
+	// $html = '<a href="' . esc_url( get_permalink() ) . '">[...続きを読む]</a>';
+	$html = '……';
 	return $html;
   }
   

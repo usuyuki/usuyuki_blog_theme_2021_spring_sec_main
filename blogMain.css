@@ -3,13 +3,18 @@
   /* カラー定義 */
   --blog-yellow-color: #e0c60b;
   --blog-green-color: #9ae6b4;
+  --blog-black-color: #474747;
+  --blog-white-color: #f9fafb;
   /* ボタン色の黄色はまた別……厄介すぎる…… */
+}
+.text-blog-white {
+  color: var(--blog-white-color);
 }
 html,
 body {
   scroll-behavior: smooth;
-  background-color: #f9fafb;
-  color: #474747;
+  background-color: var(--blog-white-color);
+  color: var(--blog-black-color);
   /* overflow-x: hidden; */
 }
 /* 記事のスタイル */
@@ -367,7 +372,7 @@ h1 span {
 }
 .article-card-arufa:before {
   background: #e8ddbd;
-  border-color: #f9fafb #f9fafb #e8ddbd #e8ddbd;
+  border-color: var(--blog-white-color) var(--blog-white-color) #e8ddbd #e8ddbd;
 }
 .article-card h1 {
   font-size: 24px;
@@ -449,6 +454,34 @@ h1 span {
   filter: grayscale(100%);
 }
 .blurBg:before {
+  content: "";
+  background: inherit;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+}
+
+.blur-pickup {
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  background-position: center;
+  -webkit-filter: grayscale(25%);
+  -moz-filter: grayscale(25%);
+  -ms-filter: grayscale(25%);
+  -o-filter: grayscale(25%);
+  filter: grayscale(25%);
+}
+.blur-pickup:before {
   content: "";
   background: inherit;
   -webkit-filter: blur(5px);
@@ -845,6 +878,11 @@ rightサイドバーここまで
   margin: 2em auto;
   width: 80% !important;
 }
+/* 縁取り */
+.futidori {
+  -webkit-text-stroke: 1px var(--blog-white-color);
+  text-stroke: 1px var(--blog-white-color);
+}
 
 @media screen and (max-width: 640px) {
   /* スマホ */
@@ -870,4 +908,18 @@ rightサイドバーここまで
     margin: 2em auto;
     width: 100% !important;
   }
+}
+
+.pickup-heading {
+  /* font-weight: bold; */
+  text-align: center;
+  font-size: 2em;
+  border: 0px;
+  padding: 0.5em 1em;
+  /* color: var(--blog-black-color); */
+  /* -webkit-text-stroke: 1px var(--blog-green-color);
+  text-stroke: 1px var(--blog-green-color); */
+  background-color: rgba(227, 227, 227, 0.8);
+  border-radius: 40% 40% 50% 40%/30% 50% 50% 50%;
+  display: inline-block;
 }
