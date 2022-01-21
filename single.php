@@ -26,11 +26,11 @@ Template Post Type: post
 
                 <div class="w-full" style="background-color:rgba(0,0,0,.7)">
                     <!--タイトル-->
-                    <h1 class="text-white text-center text-2xl font-bold kiwi-maru my-4 px-12">
+                    <h1 class="text-blog-white text-center text-2xl font-bold kiwi-maru my-4 px-12">
                         <?php the_title();?>
                     </h1>
                     <!--投稿日-->
-                    <p class="text-right text-white mr-4">
+                    <p class="text-right text-blog-white mr-4">
                         <span class="ml-2">
                             <i
                                 class="fas fa-history mr-2"></i><?php echo mysql2date('Y年n月j日', $post->post_modified ); ?>

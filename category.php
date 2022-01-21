@@ -22,10 +22,10 @@
 while(have_posts()){
 	the_post();
     if(wp_is_mobile()){
-        get_template_part( 'template/article/article_template_sp' ); 
+        get_template_part( 'template/article/article_card_sp' ); 
 
     }else{
-        get_template_part( 'template/article/article_template_pc' ); 
+        get_template_part( 'template/article/article_card_pc' ); 
     }
 }
 ?>
