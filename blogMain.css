@@ -7,6 +7,9 @@
   --blog-white-color: #f9fafb;
   /* ボタン色の黄色はまた別……厄介すぎる…… */
 }
+cite {
+  word-break: break-all;
+}
 .text-blog-white {
   color: var(--blog-white-color);
 }
@@ -872,7 +875,7 @@ rightサイドバーここまで
   margin-bottom: 10px;
 }
 .toc_list li {
-  margin: 0.1em 1em !important;
+  margin: 0.1em 0.25em !important;
 }
 #toc_container {
   border: 2px dotted var(--blog-green-color) !important;

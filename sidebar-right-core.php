@@ -21,21 +21,26 @@
     <h2 class="side-widget-title kiwi-maru">カテゴリー</h2>
     <?php 
 
-$side_categories=[
-    ['programing','プログラミング'],
-    ['travel','旅'],
-    ['life','生活向上'],
-    ]
-    ?>
+// $side_categories=[
+//     ['programing','プログラミング'],
+//     ['travel','旅'],
+//     ['life','生活向上'],
+//     ]
+$args=array(
+    'orderby' => 'count',
+    'order' => 'DESC'
+    );
+$side_categories = get_categories($args);
+     ?>
     <ul class="side-category-list">
         <?php foreach($side_categories as $side_category):?>
         <li>
-            <a class="" href="<?php echo home_url( '/category/') ?><?php echo $side_category[0] ?>">
-                <?php echo $side_category[1] ?>
+            <a class="" href="<?php echo get_category_link($side_category->term_id) ?>">
+                <?php echo $side_category->name ?>(<?php echo $side_category->count ?>)
             </a>
         </li>
         <?php endforeach;?>
-        <p class="text-right mt-2">などなど………</p>
+        <!-- <p class="text-right mt-2">などなど………</p> -->
     </ul>
     <h2 class="side-widget-title kiwi-maru">月別</h2>
     <ul class="side-monthly-list">
