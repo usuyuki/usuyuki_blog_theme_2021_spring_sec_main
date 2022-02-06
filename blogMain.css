@@ -107,6 +107,13 @@ figcaption {
   /* list-style: none; */
   list-style: inside;
 }
+/* 階層構造のリストにマージン付ける(左サイドバー目次用 */
+.toc_widget_list li ul {
+  margin-left: 1em;
+}
+#toc_container ul ul {
+  margin-left: 0.75em !important;
+}
 /* 上の目次リストとかぶって大変だった */
 /* .entry-content ul:not(.toc_list) > li::before {
   content: "●";
