@@ -7,7 +7,7 @@
 </div>
 <?php if(category_description()):?>
 <div class="entry-header flex justify-center items-center  mt-4 mb-16">
-    <p class="text-xl kiwi-maru">
+    <p class="text-xl kiwi-maru mx-4">
         <?php echo category_description(); ?>
     </p>
 </div>
