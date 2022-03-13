@@ -1,4 +1,6 @@
-name: CI
+# @format
+
+name: 自動デプロイ
 
 on:
   pull_request:
