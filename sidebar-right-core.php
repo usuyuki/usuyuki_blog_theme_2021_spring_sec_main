@@ -10,8 +10,7 @@
             </a>
         </div>
         <div class="my-2 md:w-1/2">
-            <a class="text-center p-4 kiwi-maru flex flex-wrap w-28 justify-center"
-                href="<?php echo home_url( '/' ) ?>">
+            <a class="text-center p-4 kiwi-maru flex flex-wrap w-28 justify-center" href="<?php echo home_url('/') ?>">
                 <i class="fas w-28 fa-home"></i>
                 <span>ホーム</span>
             </a>
@@ -19,32 +18,32 @@
     </div>
 
     <h2 class="side-widget-title kiwi-maru">カテゴリー</h2>
-    <?php 
+    <?php
 
-// $side_categories=[
-//     ['programing','プログラミング'],
-//     ['travel','旅'],
-//     ['life','生活向上'],
-//     ]
-$args=array(
-    'orderby' => 'count',
-    'order' => 'DESC'
+    // $side_categories=[
+    //     ['programing','プログラミング'],
+    //     ['travel','旅'],
+    //     ['life','生活向上'],
+    //     ]
+    $args = array(
+        'orderby' => 'count',
+        'order' => 'DESC'
     );
-$side_categories = get_categories($args);
-     ?>
+    $side_categories = get_categories($args);
+    ?>
     <ul class="side-category-list">
-        <?php foreach($side_categories as $side_category):?>
+        <?php foreach ($side_categories as $side_category) : ?>
         <li>
             <a class="" href="<?php echo get_category_link($side_category->term_id) ?>">
                 <?php echo $side_category->name ?>(<?php echo $side_category->count ?>)
             </a>
         </li>
-        <?php endforeach;?>
+        <?php endforeach; ?>
         <!-- <p class="text-right mt-2">などなど………</p> -->
     </ul>
     <h2 class="side-widget-title kiwi-maru">月別</h2>
     <ul class="side-monthly-list">
-        <?php wp_get_archives( 'post_type=post&type=monthly&show_post_count=1' ); ?>
+        <?php wp_get_archives('post_type=post&type=monthly&show_post_count=1'); ?>
     </ul>
     <h2 class="side-widget-title kiwi-maru">AboutMe</h2>
     <div>
@@ -73,7 +72,7 @@ $side_categories = get_categories($args);
                 <i class="fab fa-lg fa-youtube"></i>
             </a>
             <a target="_blank" rel="noopener" class="mx-2" href="https://pf.usuyuki.net/">
-                <img src="https://portfolio.usuyuki.net/wp-content/uploads/2020/10/cropped-favicon.png" alt="ポートフォリオ"
+                <img src=" <?php echo get_template_directory_uri(); ?>/img/logo/portfolio_favicon.png" alt="ポートフォリオ"
                     class=" object-fill h-6 w-6 rounded-full">
             </a>
         </div>
