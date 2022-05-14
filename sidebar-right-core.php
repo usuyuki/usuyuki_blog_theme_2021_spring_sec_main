@@ -55,7 +55,7 @@
                     class=" object-fill mx-auto  h-24 w-24 rounded-2xl ">
             </div>
             <div class="mx-2 flex items-center">
-                <p>宇都宮大学工学部2年。珈琲が好きです。
+                <p>宇都宮大学工学部3年。珈琲が好きです。
                 </p>
             </div>
         </div>
