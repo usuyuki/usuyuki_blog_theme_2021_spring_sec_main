@@ -1,7 +1,8 @@
 <?php get_header(); ?>
-<div class="h-auto pb-16" style="background-image:url('<?php
-echo get_template_directory_uri();
-?>/img/index_main.jpg');background-repeat: no-repeat;background-size: cover;background-position: center;">
+<div class="h-auto pb-16"
+    style="background-image:url('<?php
+                                                        echo get_template_directory_uri();
+                                                        ?>/img/index_main.jpg');background-repeat: no-repeat;background-size: cover;background-position: center;">
     <h1 class="text-center pt-12 text-3xl md:text-5xl text-center font-bold h-auto norepeact">
         <span class="char1">う</span>
         <span class="char2">す</span>
@@ -19,8 +20,8 @@ echo get_template_directory_uri();
 
         <div>
             <img src="<?php
-echo get_template_directory_uri();
-?>/img/logo/うすゆきブログfavicon.png" alt="うすゆき" class=" object-fill h-24 w-24 rounded-full"
+                        echo get_template_directory_uri();
+                        ?>/img/logo/うすゆきブログfavicon.png" alt="うすゆき" class=" object-fill h-24 w-24 rounded-full"
                 style="filter:drop-shadow(4px 4px 4px black)">
         </div>
 
@@ -37,8 +38,8 @@ echo get_template_directory_uri();
         </a>
         <a target="_blank" rel="noopener" class="mx-4" href="https://pf.usuyuki.net/">
             <img src="<?php
-echo get_template_directory_uri();
-?>/img/logo/portfolio_favicon.png" alt="ポートフォリオ" class=" object-fill h-12 w-12 rounded-full">
+                        echo get_template_directory_uri();
+                        ?>/img/logo/portfolio_favicon.png" alt="ポートフォリオ" class=" object-fill h-12 w-12 rounded-full">
         </a>
     </div>
 
@@ -71,23 +72,23 @@ echo get_template_directory_uri();
     </div>
 
     <div class="flex justify-center wrap mt-8 flex-wrap">
-        <?php $args=array(
-                'posts_per_page' => -1,
-                'meta_query' => array(
-                    array(
-                        'key' => 'post_pickup', 
-                        'value' => true
-                    ),
+        <?php $args = array(
+            'posts_per_page' => -1,
+            'meta_query' => array(
+                array(
+                    'key' => 'post_pickup',
+                    'value' => true
                 ),
-            );
-            $customPost=get_posts($args);
-            if($customPost):
-                foreach($customPost as $post):
-            ?>
+            ),
+        );
+        $customPost = get_posts($args);
+        if ($customPost) :
+            foreach ($customPost as $post) :
+        ?>
 
         <?php
-            get_template_part( 'template/article/article_pickup_card' ); 
-        ?>
+                get_template_part('template/article/article_pickup_card');
+                ?>
         <?php endforeach;
         endif; ?>
 
@@ -99,38 +100,42 @@ echo get_template_directory_uri();
     </div>
 
 
+    <!-- <h2 class="text-center text-3xl kiwi-maru h2-bou mb-8 start-large">趣向</h2> -->
+    <p class="text-center kiwi-maru">ここは雑多ブログです。</p>
+    <p class="text-center kiwi-maru"><a target="_blank" rel="noopener"
+            href="https://neo.usuyuki.net">neo.usuyuki.net</a>にも書いています。
+    </p>
     <h2 class="text-center text-3xl kiwi-maru h2-bou mb-8 start-large">最新の記事</h2>
 
     <div class="flex justify-center wrap mt-8 flex-wrap">
-        <?php $args=array(
-                'numberposts'=>10,
-             
+        <?php $args = array(
+            'numberposts' => 10,
+
             // 'post_type'=>'work',
             // 'orderby' => 'meta_value',
             // 'meta_key' => 'work_start', //ACFのフィールド名
             'order' => 'DESC'
 
-            );
-            $customPost=get_posts($args);
-            if($customPost):
-                foreach($customPost as $post):
-                    // setup_postdata($post):
-            ?>
+        );
+        $customPost = get_posts($args);
+        if ($customPost) :
+            foreach ($customPost as $post) :
+                // setup_postdata($post):
+        ?>
 
         <?php
-        if(wp_is_mobile()){
-            get_template_part( 'template/article/article_card_sp' ); 
-
-        }else{
-            get_template_part( 'template/article/article_card_pc' ); 
-        }
-        ?>
+                if (wp_is_mobile()) {
+                    get_template_part('template/article/article_card_sp');
+                } else {
+                    get_template_part('template/article/article_card_pc');
+                }
+                ?>
         <?php endforeach;
         endif; ?>
 
     </div>
     <div class="mx-auto text-center my-8">
-        <a class="btn-motto" href="<?php echo home_url( '/allposts' ) ?>">もっと見る！</a>
+        <a class="btn-motto" href="<?php echo home_url('/allposts') ?>">もっと見る！</a>
     </div>
 
     <div class="circle-anime2 h-4 w-4 bg-blue-500 rounded-full inline-block">
@@ -140,49 +145,48 @@ echo get_template_directory_uri();
 <h2 class="text-center text-3xl kiwi-maru h2-bou my-12 start-large">カテゴリー別の記事</h2>
 
 <!-- ジャンルかたまりここから -->
-<?php  
-$slugs=["programing","travel","life",];
-$names=["プログラミング","旅","生活向上",];
-$counter=0;
+<?php
+$slugs = ["programing", "travel", "life",];
+$names = ["プログラミング", "旅", "生活向上",];
+$counter = 0;
 ?>
-<?php foreach($slugs as $slug):?>
+<?php foreach ($slugs as $slug) : ?>
 <div class="flex justify-center">
 
-    <h3 class="text-center text-3xl two-square kiwi-maru h2-bou inline mt-20"><?php echo $names[$counter];?></h3>
+    <h3 class="text-center text-3xl two-square kiwi-maru h2-bou inline mt-20"><?php echo $names[$counter]; ?></h3>
 </div>
 <div class="flex justify-center wrap mt-8 flex-wrap">
-    <?php $args=array(
-                'numberposts'=>4,
-             
-                'category_name'=>$slug,
+    <?php $args = array(
+            'numberposts' => 4,
+
+            'category_name' => $slug,
             // 'orderby' => 'meta_value',
             // 'meta_key' => 'work_start', //ACFのフィールド名
             'order' => 'DESC'
 
-            );
-            $customPost=get_posts($args);
-            if($customPost):
-                foreach($customPost as $post):
-                    // setup_postdata($post):
-            ?>
+        );
+        $customPost = get_posts($args);
+        if ($customPost) :
+            foreach ($customPost as $post) :
+                // setup_postdata($post):
+        ?>
 
-    <?php 
-      if(wp_is_mobile()){
-        get_template_part( 'template/article/article_card_sp' ); 
-
-    }else{
-        get_template_part( 'template/article/article_card_pc' ); 
-    }
-    ?>
+    <?php
+                if (wp_is_mobile()) {
+                    get_template_part('template/article/article_card_sp');
+                } else {
+                    get_template_part('template/article/article_card_pc');
+                }
+                ?>
     <?php endforeach;
         endif; ?>
 
 </div>
 <div class="mx-auto text-center my-8">
-    <a class="btn-motto" href="<?php echo home_url( '/category/') ?><?php echo $slug ?>">もっと見る！</a>
+    <a class="btn-motto" href="<?php echo home_url('/category/') ?><?php echo $slug ?>">もっと見る！</a>
 </div>
 <div class="w-1/2 mx-auto " style="border:1px dashed black;"></div>
-<?php $counter+=1;
+<?php $counter += 1;
 endforeach; ?>
 <div>
     <div class="flex justify-center">
@@ -193,15 +197,15 @@ endforeach; ?>
         <div class="mx-2">
             <a target="_blank" rel="noopener" class="mx-4" href="https://qiita.com/Usuyuki">
                 <img src="<?php
-echo get_template_directory_uri();
-?>/img/logo/qiita-logo.png" alt="qiita" class=" object-fill  h-auto" style="width:300px">
+                            echo get_template_directory_uri();
+                            ?>/img/logo/qiita-logo.png" alt="qiita" class=" object-fill  h-auto" style="width:300px">
             </a>
         </div>
         <div class="mx-2 flex items-center">
             <a target="_blank" rel="noopener" class="mx-4 " href="https://zenn.dev/usuyuki">
                 <img src="<?php
-echo get_template_directory_uri();
-?>/img/logo/zenn-logo.png" alt="qiita" class=" object-fill h-auto" style="width:300px">
+                            echo get_template_directory_uri();
+                            ?>/img/logo/zenn-logo.png" alt="qiita" class=" object-fill h-auto" style="width:300px">
             </a>
         </div>
     </div>
@@ -215,8 +219,8 @@ echo get_template_directory_uri();
         <div class="mx-2">
             <a target="_blank" rel="noopener" class="mx-4" href="https://note.com/usuyuki26/">
                 <img src="<?php
-echo get_template_directory_uri();
-?>/img/logo/note-logo.png" alt="note" class=" object-fill  h-auto" style="width:300px">
+                            echo get_template_directory_uri();
+                            ?>/img/logo/note-logo.png" alt="note" class=" object-fill  h-auto" style="width:300px">
             </a>
         </div>
     </div>
@@ -231,8 +235,9 @@ echo get_template_directory_uri();
         <div class="mx-2">
             <a target="_blank" rel="noopener" class="mx-4" href="https://pf.usuyuki.net">
                 <img src="<?php
-echo get_template_directory_uri();
-?>/img/logo/portfolio_title20201027.png" alt="ポートフォリオ" class=" object-fill  h-auto" style="width:300px">
+                            echo get_template_directory_uri();
+                            ?>/img/logo/portfolio_title20201027.png" alt="ポートフォリオ" class=" object-fill  h-auto"
+                    style="width:300px">
             </a>
         </div>
     </div>
