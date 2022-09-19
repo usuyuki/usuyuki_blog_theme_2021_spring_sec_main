@@ -74,6 +74,7 @@
     <div class="flex justify-center wrap mt-8 flex-wrap">
         <?php $args = array(
             'posts_per_page' => -1,
+            'has_password' => false,
             'meta_query' => array(
                 array(
                     'key' => 'post_pickup',
@@ -114,6 +115,7 @@
             // 'post_type'=>'work',
             // 'orderby' => 'meta_value',
             // 'meta_key' => 'work_start', //ACFのフィールド名
+            'has_password' => false,
             'order' => 'DESC'
 
         );
@@ -162,7 +164,8 @@ $counter = 0;
             'category_name' => $slug,
             // 'orderby' => 'meta_value',
             // 'meta_key' => 'work_start', //ACFのフィールド名
-            'order' => 'DESC'
+            'order' => 'DESC',
+            'has_password' => false,
 
         );
         $customPost = get_posts($args);
