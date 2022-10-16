@@ -3,7 +3,7 @@
 <head>
     <title><?php wp_title('｜', true, 'right'); ?></title>
     <meta name="robots" content="index, follow">
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
 
@@ -27,7 +27,7 @@
     <!--Google Analyticsここから-->
     <!-- うすゆきブログトラッキングコード -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180837698-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZB2SYBTNQQ"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -36,9 +36,8 @@
     }
     gtag('js', new Date());
 
-    gtag('config', 'UA-180837698-1');
+    gtag('config', 'G-ZB2SYBTNQQ');
     </script>
-
     <!--Google Analyticsここまで-->
     <?php wp_head(); ?>
 </head>
@@ -50,14 +49,15 @@
 
             <div class="flex items-center md:w-1/3 md:ml-4  md:block mt-2">
 
-                <a class="text-center md:p-4 kiwi-maru" href="<?php echo home_url( '/' ) ?>"><i
+                <a class="text-center md:p-4 kiwi-maru" href="<?php echo home_url('/') ?>"><i
                         class="fas fa-home"></i><br>ホーム</a>
 
             </div>
             <h1 class="site_title w-1/3 hidden md:block">
-                <a href="<?php echo get_home_url();?>"> <img src="<?php
-echo get_template_directory_uri();
-?>/img/usuyukilogo2021spring.png" alt="うすゆきブログ" class="mx-auto py-2" style="height:60px"></a>
+                <a href="<?php echo get_home_url(); ?>"> <img src="<?php
+                                                                    echo get_template_directory_uri();
+                                                                    ?>/img/usuyukilogo2021spring.png" alt="うすゆきブログ"
+                        class="mx-auto py-2" style="height:60px"></a>
             </h1>
             <div class="md:w-1/3 flex md:justify-end justify-center items-center">
                 <?php get_search_form(); ?>
