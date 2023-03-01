@@ -14,12 +14,7 @@
 //記事データがある間、1記事分ずつ指定の内容を出力させる（1ページ分の表示記事数は管理画面＞設定＞表示設定から変更できます）
 while(have_posts()){
 	the_post();
-    if(wp_is_mobile()){
-        get_template_part( 'template/article/article_card_sp' ); 
-
-    }else{
-        get_template_part( 'template/article/article_card_pc' ); 
-    }
+    wp_is_mobile() ? get_template_part( 'template/article/article_card_sp' ) : get_template_part( 'template/article/article_card_pc' );
 }
 ?>
 

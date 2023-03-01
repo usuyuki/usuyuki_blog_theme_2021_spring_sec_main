@@ -8,12 +8,7 @@ Template Post Type: post
 <div class="md:grid grid-cols-8 w-full">
     <div class="col-span-2 ">
         <?php
-        if(wp_is_mobile()){
-            get_sidebar('left-sp');
-
-        }else{
-            get_sidebar('left-pc');
-        }
+        wp_is_mobile() ? get_sidebar('left-sp') : get_sidebar('left-pc');
         ?>
     </div>
     <div id="template-single" class="col-span-4 md:mx-0 mx-4 ">
