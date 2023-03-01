@@ -935,3 +935,9 @@ rightサイドバーここまで
   border-radius: 40% 40% 50% 40%/30% 50% 50% 50%;
   display: inline-block;
 }
+
+/* GoogleMapsなどのiframe系の埋め込みが盛大にサイズ壊れるのを防ぐ */
+iframe {
+  aspect-ratio: 16/9;
+  width: 100%;
+}
